@@ -4,5 +4,6 @@ class User::DashboardController < ApplicationController
                 :check_if_saving_npc
 
   def show
+    @npcs = current_user.npc_models
   end
 end
