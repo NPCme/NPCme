@@ -4039,36 +4039,42 @@ a:visited {text-decoration:none;}
 			</div>
 			<div class="stl_view">
 				<div class="stl_05 stl_06">
-					<div class="stl_01 stl_07" style="top: 4.232em; left:22.6703em;"><span class="stl_08">Class-Level &nbsp;</span></div>
+					<div class="stl_01 stl_07" style="top: 4.232em; left:22.6703em;"><span class="stl_08"><%= @npc.character_class %> <%= @npc.level %></span></div>
 					<div class="stl_01" style="top: 5.3286em; left:22.56em;"><span class="stl_09" style="word-spacing:-0.02em;">CLASS &amp; LEVEL &nbsp;</span></div>
-					<div class="stl_01 stl_10" style="top: 4.232em; left:32.1776em;"><span class="stl_08 stl_11">Backgroun-tex<span class="stl_12">t &nbsp;</span></span></div>
+					<div class="stl_01 stl_10" style="top: 4.232em; left:32.1776em;"><span class="stl_08 stl_11"><%= @npc.background_name %></span></div>
 					<div class="stl_01" style="top: 5.3286em; left:31.9563em;"><span class="stl_09 stl_12">BACKGROU<span class="stl_11">ND &nbsp;</span></span></div>
-					<div class="stl_01 stl_13" style="top: 4.232em; left:40.1903em;"><span class="stl_14">player-name &nbsp;</span></div>
+					<div class="stl_01 stl_13" style="top: 4.232em; left:40.1903em;"><span class="stl_14">
+            <% if current_user %>
+              <%= current_user.name %>
+            <% else %>
+              Visitor
+            <% end %>
+          </span></div>
 					<div class="stl_01" style="top: 5.3286em; left:40.02em;"><span class="stl_09 stl_12" style="word-spacing:0.02em;">PLAYER NAME &nbsp;</span></div>
-					<div class="stl_01 stl_15" style="top: 5.3794em; left:7.9685em;"><span class="stl_16 stl_11">Char-Name<span class="stl_12">1 &nbsp;</span></span></div>
-					<div class="stl_01 stl_07" style="top: 6.4054em; left:22.5869em;"><span class="stl_08">Race-text &nbsp;</span></div>
-					<div class="stl_01 stl_07" style="top: 6.4054em; left:32.1266em;"><span class="stl_08 stl_11">alignment-tex<span class="stl_12">t &nbsp;</span></span></div>
-					<div class="stl_01 stl_13" style="top: 6.4054em; left:40.1903em;"><span class="stl_14">EXP-text &nbsp;</span></div>
+					<div class="stl_01 stl_15" style="top: 5.3794em; left:7.9685em;"><span class="stl_16 stl_11"><%= @npc.name %></span></div>
+					<div class="stl_01 stl_07" style="top: 6.4054em; left:22.5869em;"><span class="stl_08"><%= @npc.ancestry %>/<%= @npc.sub_ancestry %></div>
+					<div class="stl_01 stl_07" style="top: 6.4054em; left:32.1266em;"><span class="stl_08 stl_11"><%= @npc.alignment %></span></div>
+					<div class="stl_01 stl_13" style="top: 6.4054em; left:40.1903em;"><span class="stl_14"><%= @npc.level %></div>
 					<div class="stl_01" style="top: 7.518em; left:5.7557em;"><span class="stl_09 stl_12" style="word-spacing:0.08em;">CHARACTER NAME &nbsp;</span></div>
-					<div class="stl_01" style="top: 7.5019em; left:22.56em;"><span class="stl_09 stl_12">RAC<span class="stl_11">E &nbsp;</span></span></div>
+					<div class="stl_01" style="top: 7.5019em; left:22.56em;"><span class="stl_09 stl_12">ANCESTRY</span></div>
 					<div class="stl_01" style="top: 7.5019em; left:31.9563em;"><span class="stl_09 stl_11">ALIGNME<span class="stl_12">NT &nbsp;</span></span></div>
 					<div class="stl_01" style="top: 7.518em; left:40.02em;"><span class="stl_09 stl_11" style="word-spacing:-0.01em;">EXPERIENCE P<span class="stl_12">OINTS &nbsp;</span></span></div>
 					<div class="stl_01" style="top: 11.3806em; left:12.1964em;"><span class="stl_17 stl_18">INSPIRA<span class="stl_12">TION &nbsp;</span></span></div>
 					<div class="stl_01" style="top: 12.1295em; left:3.4284em;"><span class="stl_19 stl_12">STRENG<span class="stl_11">TH &nbsp;</span></span></div>
-					<div class="stl_01 stl_20" style="top: 12.4156em; left:19.6723em;"><span class="stl_21">AC-txt &nbsp;</span></div>
-					<div class="stl_01 stl_22" style="top: 12.1273em; left:35.0603em;"><span class="stl_23">Personality-Text &nbsp;</span></div>
-					<div class="stl_01 stl_24" style="top: 12.7529em; left:28.8533em;"><span class="stl_25">speed-txt &nbsp;</span></div>
-					<div class="stl_01 stl_26" style="top: 12.4483em; left:23.9921em;"><span class="stl_27">In-txt &nbsp;</span></div>
+					<div class="stl_01 stl_20" style="top: 12.4156em; left:19.6723em;"><span class="stl_21"><%= @npc.armor_class %></span></div>
+					<div class="stl_01 stl_22" style="top: 12.1273em; left:35.0603em;"><span class="stl_23"><%= @npc.personality_personality %></span></div>
+					<div class="stl_01 stl_24" style="top: 12.7529em; left:28.8533em;"><span class="stl_25"><%= @npc.speed %></span></div>
+					<div class="stl_01 stl_26" style="top: 12.4483em; left:23.9921em;"><span class="stl_27"><%= @npc.initiative %></span></div>
 					<div class="stl_01" style="top: 14.5599em; left:24.0374em;"><span class="stl_19 stl_12">INITIATI<span class="stl_11">VE &nbsp;</span></span></div>
-					<div class="stl_01 stl_28" style="top: 13.5189em; left:3.2385em;"><span class="stl_29 stl_12">STR-mo<span class="stl_11">d &nbsp;</span></span></div>
+					<div class="stl_01 stl_28" style="top: 13.5189em; left:3.2385em;"><span class="stl_29 stl_12"><%= @npc.core_modifiers_str_mod %></span></div>
 					<div class="stl_01" style="top: 13.8354em; left:19.7258em;z-index:961; "><span class="stl_19">ARMOR &nbsp;</span></div>
 					<div class="stl_01" style="top: 14.3354em; left:19.8994em;z-index:966; "><span class="stl_19">CLASS &nbsp;</span></div>
-					<div class="stl_01 stl_30" style="top: 14.5812em; left:8.2363em;"><span class="stl_31 stl_12">prof-b<span class="stl_11">on &nbsp;</span></span></div>
+					<div class="stl_01 stl_30" style="top: 14.5812em; left:8.2363em;"><span class="stl_31 stl_12"><%= @npc.proficiency_bonus %></span></div>
 					<div class="stl_01" style="top: 14.5228em; left:11.3001em;"><span class="stl_17 stl_12" style="word-spacing:-0.02em;">PROFICIENCY BONUS &nbsp;</span></div>
 					<div class="stl_01" style="top: 14.5599em; left:29.4161em;"><span class="stl_19">SPEED &nbsp;</span></div>
-					<div class="stl_01 stl_32" style="top: 15.8431em; left:4.0441em;"><span class="stl_33 stl_12">str-sc<span class="stl_11">o &nbsp;</span></span></div>
+					<div class="stl_01 stl_32" style="top: 15.8431em; left:4.0441em;"><span class="stl_33 stl_12"><%= @npc.core_scores_str %></span></div>
 					<div class="stl_01" style="top: 15.7881em; left:38.977em;"><span class="stl_34 stl_12" style="word-spacing:-0.03em;">PERSONALITY TRAITS &nbsp;</span></div>
-					<div class="stl_01 stl_35" style="top: 16.5601em; left:24.4103em;"><span class="stl_36 stl_11">HP-max-t<span class="stl_12">ext &nbsp;</span></span></div>
+					<div class="stl_01 stl_35" style="top: 16.5601em; left:24.4103em;"><span class="stl_36 stl_11"><%= @npc.hit_points %></span></div>
 					<div class="stl_01" style="top: 16.734em; left:19.1467em;"><span class="stl_37 stl_12" style="word-spacing:0.05em;">Hit Point Maximum &nbsp;</span></div>
 					<div class="stl_01 stl_38" style="top: 17.423em; left:8.5744em;"><span class="stl_39 stl_12">●</span></div>
 					<div class="stl_01 stl_40" style="top: 18.5306em; left:8.5744em;"><span class="stl_41 stl_12">●</span></div>
@@ -4076,29 +4082,29 @@ a:visited {text-decoration:none;}
 					<div class="stl_01 stl_40" style="top: 20.7976em; left:8.5744em;"><span class="stl_43 stl_12">●</span></div>
 					<div class="stl_01 stl_40" style="top: 21.9188em; left:8.5744em;"><span class="stl_44 stl_12">●</span></div>
 					<div class="stl_01 stl_45" style="top: 23.045em; left:8.5744em;"><span class="stl_46 stl_12">●</span></div>
-					<div class="stl_01 stl_47" style="top: 17.1925em; left:9.6556em;"><span class="stl_48 stl_49" style="word-spacing:1.22em;">11b </span><span class="stl_09 stl_50" style="word-spacing:0.83em;">Strength &nbsp;</span></div>
+					<div class="stl_01 stl_47" style="top: 17.1925em; left:9.6556em;"><span class="stl_48 stl_49" style="word-spacing:1.22em;"><%= @npc.saving_throws_str %></span><span class="stl_09 stl_50" style="word-spacing:0.83em;">Strength &nbsp;</span></div>
 					<div class="stl_01" style="top: 18.1168em; left:3.4568em;"><span class="stl_19 stl_12">DEXTERI<span class="stl_11">TY &nbsp;</span></span></div>
-					<div class="stl_01 stl_51" style="top: 18.4877em; left:9.6556em;"><span class="stl_48">22b &nbsp;</span></div>
+					<div class="stl_01 stl_51" style="top: 18.4877em; left:9.6556em;"><span class="stl_48"><%= @npc.saving_throws_dex %></span></div>
 					<div class="stl_01" style="top: 18.4025em; left:10.9167em;"><span class="stl_09 stl_52">Dexter<span class="stl_49">ity &nbsp;</span></span></div>
-					<div class="stl_01 stl_53" style="top: 17.8873em; left:35.0603em;"><span class="stl_23">Ideals-text &nbsp;</span></div>
-					<div class="stl_01 stl_54" style="top: 18.0715em; left:19.7841em;"><span class="stl_55">current-HP-text &nbsp;</span></div>
-					<div class="stl_01 stl_47" style="top: 19.4418em; left:9.6556em;"><span class="stl_48 stl_50" style="word-spacing:1.25em;">33b </span><span class="stl_09 stl_50" style="word-spacing:0.83em;">Constitution &nbsp;</span></div>
-					<div class="stl_01 stl_56" style="top: 20.5698em; left:9.6556em;"><span class="stl_48 stl_50" style="word-spacing:1.25em;">44b </span><span class="stl_09 stl_50" style="word-spacing:0.83em;">Intelligenc<span class="stl_11">e &nbsp;</span></span></div>
-					<div class="stl_01 stl_56" style="top: 21.6978em; left:9.6556em;"><span class="stl_48 stl_50" style="word-spacing:1.25em;">55b </span><span class="stl_09 stl_50" style="word-spacing:0.84em;">Wisdo<span class="stl_11">m &nbsp;</span></span></div>
-					<div class="stl_01 stl_57" style="top: 19.5291em; left:3.2393em;"><span class="stl_58 stl_12">DEX-mo<span class="stl_11">d &nbsp;</span></span></div>
+					<div class="stl_01 stl_53" style="top: 17.8873em; left:35.0603em;"><span class="stl_23"><%= @npc.personality_ideal %></span></div>
+					<div class="stl_01 stl_54" style="top: 18.0715em; left:19.7841em;"><span class="stl_55"></span></div>
+					<div class="stl_01 stl_47" style="top: 19.4418em; left:9.6556em;"><span class="stl_48 stl_50" style="word-spacing:1.25em;"><%= @npc.saving_throws_con %></span><span class="stl_09 stl_50" style="word-spacing:0.83em;">Constitution &nbsp;</span></div>
+					<div class="stl_01 stl_56" style="top: 20.5698em; left:9.6556em;"><span class="stl_48 stl_50" style="word-spacing:1.25em;"><%= @npc.saving_throws_int %> </span><span class="stl_09 stl_50" style="word-spacing:0.83em;">Intelligenc<span class="stl_11">e &nbsp;</span></span></div>
+					<div class="stl_01 stl_56" style="top: 21.6978em; left:9.6556em;"><span class="stl_48 stl_50" style="word-spacing:1.25em;"><%= @npc.saving_throws_wis %></span><span class="stl_09 stl_50" style="word-spacing:0.84em;">Wisdo<span class="stl_11">m &nbsp;</span></span></div>
+					<div class="stl_01 stl_57" style="top: 19.5291em; left:3.2393em;"><span class="stl_58 stl_12"><%= @npc.core_modifiers_dex_mod %></span></div>
 					<div class="stl_01" style="top: 20.377em; left:22.8266em;"><span class="stl_19 stl_12" style="word-spacing:0.07em;">CURRENT HIT POINTS &nbsp;</span></div>
 					<div class="stl_01" style="top: 20.3736em; left:40.501em;"><span class="stl_34 stl_12">IDEALS &nbsp;</span></div>
-					<div class="stl_01 stl_59" style="top: 21.8808em; left:4.0403em;"><span class="stl_60 stl_12">dex-sco &nbsp;</span></div>
-					<div class="stl_01 stl_47" style="top: 22.8138em; left:9.6556em;"><span class="stl_48 stl_50" style="word-spacing:1.24em;">66b </span><span class="stl_09 stl_50" style="word-spacing:0.84em;">Charis<span class="stl_11">ma &nbsp;</span></span></div>
-					<div class="stl_01 stl_61" style="top: 22.5073em; left:35.0603em;"><span class="stl_23">Bonds-text &nbsp;</span></div>
-					<div class="stl_01 stl_62" style="top: 22.5143em; left:19.4351em;"><span class="stl_63 stl_11">temp-hitpoints-tex<span class="stl_12">t &nbsp;</span></span></div>
+					<div class="stl_01 stl_59" style="top: 21.8808em; left:4.0403em;"><span class="stl_60 stl_12"><%= @npc.core_scores_dex %></span></div>
+					<div class="stl_01 stl_47" style="top: 22.8138em; left:9.6556em;"><span class="stl_48 stl_50" style="word-spacing:1.24em;"><%= @npc.saving_throws_cha %></span><span class="stl_09 stl_50" style="word-spacing:0.84em;">Charis<span class="stl_11">ma &nbsp;</span></span></div>
+					<div class="stl_01 stl_61" style="top: 22.5073em; left:35.0603em;"><span class="stl_23"><%= @npc.personality_bond %><</span></div>
+					<div class="stl_01 stl_62" style="top: 22.5143em; left:19.4351em;"><span class="stl_63 stl_11"></span></div>
 					<div class="stl_01" style="top: 24.0546em; left:2.8577em;"><span class="stl_19 stl_12">CONSTITUT<span class="stl_11">ION &nbsp;</span></span></div>
 					<div class="stl_01" style="top: 24.2372em; left:10.3857em;"><span class="stl_19 stl_12" style="word-spacing:-0.02em;">SAVING THROWS &nbsp;</span></div>
 					<div class="stl_01" style="top: 24.7891em; left:22.4887em;"><span class="stl_19 stl_12" style="word-spacing:0.06em;">TEMPORARY HIT POINTS &nbsp;</span></div>
 					<div class="stl_01" style="top: 25.027em; left:40.4569em;"><span class="stl_34 stl_12">BOND<span class="stl_18">S &nbsp;</span></span></div>
 					<div class="stl_01" style="top: 29.5876em; left:40.5474em;"><span class="stl_34 stl_18">FLAWS &nbsp;</span></div>
-					<div class="stl_01 stl_64" style="top: 25.4926em; left:3.2388em;"><span class="stl_65 stl_12">CON-m<span class="stl_11">od &nbsp;</span></span></div>
-					<div class="stl_01 stl_66" style="top: 26.685em; left:20.7503em;"><span class="stl_67 stl_12" style="word-spacing:0.04em;">HD-total text &nbsp;</span></div>
+					<div class="stl_01 stl_64" style="top: 25.4926em; left:3.2388em;"><span class="stl_65 stl_12"><%= @npc.core_modifiers_con_mod %></span></div>
+					<div class="stl_01 stl_66" style="top: 26.685em; left:20.7503em;"><span class="stl_67 stl_12" style="word-spacing:0.04em;"></span></div>
 					<div class="stl_01 stl_68" style="top: 27.013em; left:8.5744em;"><span class="stl_69 stl_12">●</span></div>
 					<div class="stl_01 stl_40" style="top: 28.1478em; left:8.5744em;"><span class="stl_70 stl_12">●</span></div>
 					<div class="stl_01 stl_40" style="top: 29.2758em; left:8.5744em;"><span class="stl_71 stl_12">●</span></div>
@@ -4117,65 +4123,65 @@ a:visited {text-decoration:none;}
 					<div class="stl_01 stl_40" style="top: 43.8986em; left:8.5744em;"><span class="stl_84 stl_12">●</span></div>
 					<div class="stl_01 stl_40" style="top: 45.0266em; left:8.5744em;"><span class="stl_85 stl_12">●</span></div>
 					<div class="stl_01 stl_40" style="top: 46.1512em; left:8.5744em;"><span class="stl_86 stl_12">●</span></div>
-					<div class="stl_01 stl_47" style="top: 26.7881em; left:9.5206em;"><span class="stl_87 stl_50">70xx</span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Acrobatic<span class="stl_11">s</span></span><span class="stl_88 stl_50" style="word-spacing:-0.03em;">&nbsp;(Dex) &nbsp;</span></div>
-					<div class="stl_01 stl_56" style="top: 27.9161em; left:9.5206em;"><span class="stl_87 stl_50">71xx</span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Anima<span class="stl_11">l</span></span><span class="stl_09 stl_50" style="word-spacing:-0.04em;">&nbsp;Handling</span><span class="stl_89 stl_50" style="word-spacing:-0.03em;">&nbsp;(Wis) &nbsp;</span></div>
-					<div class="stl_01 stl_90" style="top: 29.0441em; left:9.5206em;"><span class="stl_87 stl_50">72xx</span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.78em;">Arca<span class="stl_11">na</span></span><span class="stl_89" style="word-spacing:0.02em;">&nbsp;(Int) &nbsp;</span></div>
+					<div class="stl_01 stl_47" style="top: 26.7881em; left:9.5206em;"><span class="stl_87 stl_50"><%= @npc.skills_acrobatics %></span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Acrobatic<span class="stl_11">s</span></span><span class="stl_88 stl_50" style="word-spacing:-0.03em;">&nbsp;(Dex) &nbsp;</span></div>
+					<div class="stl_01 stl_56" style="top: 27.9161em; left:9.5206em;"><span class="stl_87 stl_50"><%= @npc.skills_animal_handling %></span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Anima<span class="stl_11">l</span></span><span class="stl_09 stl_50" style="word-spacing:-0.04em;">&nbsp;Handling</span><span class="stl_89 stl_50" style="word-spacing:-0.03em;">&nbsp;(Wis) &nbsp;</span></div>
+					<div class="stl_01 stl_90" style="top: 29.0441em; left:9.5206em;"><span class="stl_87 stl_50"><%= @npc.skills_arcana %></span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.78em;">Arca<span class="stl_11">na</span></span><span class="stl_89" style="word-spacing:0.02em;">&nbsp;(Int) &nbsp;</span></div>
 					<div class="stl_01" style="top: 26.7826em; left:19.1467em;"><span class="stl_91 stl_92">Total &nbsp;</span></div>
 					<div class="stl_01" style="top: 26.9793em; left:26.2306em;"><span class="stl_34 stl_12">SUCCESSES &nbsp;</span></div>
 					<div class="stl_01" style="top: 28.2293em; left:26.6499em;"><span class="stl_34 stl_12">FAILUR<span class="stl_18">ES &nbsp;</span></span></div>
-					<div class="stl_01 stl_53" style="top: 27.0673em; left:35.0603em;"><span class="stl_23">Flaws-text &nbsp;</span></div>
-					<div class="stl_01 stl_59" style="top: 27.8208em; left:4.0403em;"><span class="stl_60 stl_12">con-sco &nbsp;</span></div>
-					<div class="stl_01" style="top: 27.9628em; left:19.4951em;"><span class="stl_93 stl_11">Hitdice-t<span class="stl_12">ext &nbsp;</span></span></div>
+					<div class="stl_01 stl_53" style="top: 27.0673em; left:35.0603em;"><span class="stl_23"><%= @npc.personality_flaw %></span></div>
+					<div class="stl_01 stl_59" style="top: 27.8208em; left:4.0403em;"><span class="stl_60 stl_12"><%= @npc.core_scores_con %></span></div>
+					<div class="stl_01" style="top: 27.9628em; left:19.4951em;"><span class="stl_93 stl_11"><%= @npc.hit_dice %>></span></div>
 					<div class="stl_01" style="top: 29.5068em; left:20.9589em;"><span class="stl_34" style="word-spacing:-0.07em;">HIT DICE &nbsp;</span></div>
 					<div class="stl_01" style="top: 29.5068em; left:27.5455em;"><span class="stl_34 stl_18" style="word-spacing:0.02em;">DEATH SAVE<span class="stl_92">S &nbsp;</span></span></div>
 					<div class="stl_01" style="top: 30.0472em; left:2.9994em;"><span class="stl_19 stl_12">INTELLIGE<span class="stl_11">NCE &nbsp;</span></span></div>
-					<div class="stl_01 stl_94" style="top: 30.1661em; left:9.5206em;"><span class="stl_87 stl_49">73x<span class="stl_50">x</span></span><span class="stl_87 stl_50" style="word-spacing:1.14em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Athletics</span><span class="stl_89 stl_50" style="word-spacing:-0.02em;">&nbsp;(Str) &nbsp;</span></div>
-					<div class="stl_01 stl_90" style="top: 31.2941em; left:9.5206em;"><span class="stl_87 stl_50">74xx</span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Deceptio<span class="stl_11">n</span></span><span class="stl_89 stl_50" style="word-spacing:-0.03em;">&nbsp;(Cha) &nbsp;</span></div>
-					<div class="stl_01 stl_90" style="top: 32.4221em; left:9.5206em;"><span class="stl_87 stl_50">75x<span class="stl_49">x</span></span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Histor<span class="stl_11">y</span></span><span class="stl_89 stl_50" style="word-spacing:-0.03em;">&nbsp;(Int) &nbsp;</span></div>
-					<div class="stl_01 stl_95" style="top: 31.4306em; left:3.2388em;"><span class="stl_96">INT-mod &nbsp;</span></div>
+					<div class="stl_01 stl_94" style="top: 30.1661em; left:9.5206em;"><span class="stl_87 stl_49"><%= @npc.skills_athletics %></span><span class="stl_87 stl_50" style="word-spacing:1.14em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Athletics</span><span class="stl_89 stl_50" style="word-spacing:-0.02em;">&nbsp;(Str) &nbsp;</span></div>
+					<div class="stl_01 stl_90" style="top: 31.2941em; left:9.5206em;"><span class="stl_87 stl_50"><%= @npc.skills_deception %></span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Deceptio<span class="stl_11">n</span></span><span class="stl_89 stl_50" style="word-spacing:-0.03em;">&nbsp;(Cha) &nbsp;</span></div>
+					<div class="stl_01 stl_90" style="top: 32.4221em; left:9.5206em;"><span class="stl_87 stl_50"><%= @npc.skills_history %></span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Histor<span class="stl_11">y</span></span><span class="stl_89 stl_50" style="word-spacing:-0.03em;">&nbsp;(Int) &nbsp;</span></div>
+					<div class="stl_01 stl_95" style="top: 31.4306em; left:3.2388em;"><span class="stl_96"><%= @npc.core_modifiers_int_mod %></span></div>
 					<div class="stl_01" style="top: 32.0106em; left:18.6275em;"><span class="stl_97 stl_12">NAME &nbsp;</span></div>
 					<div class="stl_01" style="top: 32.0106em; left:24.2679em;"><span class="stl_97 stl_12" style="word-spacing:-0.03em;">ATK BONUS</span><span class="stl_97 stl_12" style="word-spacing:0.69em;">&nbsp;DAMAGE/TYPE &nbsp;</span></div>
 					<div class="stl_01 stl_61" style="top: 32.6287em; left:34.5366em;"><span class="stl_23">Features-Traits-Text &nbsp;</span></div>
 					<div class="stl_01 stl_98" style="top: 32.8206em; left:18.8303em;"><span class="stl_23 stl_12" style="word-spacing:1.14em;">Weapon1 ab1 </span><span class="stl_99 stl_12" style="word-spacing:1.09em;">dam<span class="stl_11">1 &nbsp;</span></span></div>
 					<div class="stl_01 stl_100" style="top: 34.5006em; left:18.8303em;"><span class="stl_23 stl_12" style="word-spacing:1.14em;">Weapon2 ab2 </span><span class="stl_99 stl_12" style="word-spacing:1.09em;">dam<span class="stl_11">2 &nbsp;</span></span></div>
 					<div class="stl_01 stl_100" style="top: 36.2406em; left:18.8303em;"><span class="stl_23 stl_12" style="word-spacing:1.14em;">Weapon3 ab3 </span><span class="stl_99 stl_12" style="word-spacing:1.09em;">dam<span class="stl_11">3 &nbsp;</span></span></div>
-					<div class="stl_01 stl_47" style="top: 33.5441em; left:9.5206em;"><span class="stl_87 stl_50">76xx</span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Insigh<span class="stl_11">t</span></span><span class="stl_89" style="word-spacing:0.02em;">&nbsp;(Wis) &nbsp;</span></div>
-					<div class="stl_01 stl_56" style="top: 34.6661em; left:9.5206em;"><span class="stl_87 stl_50">77xx</span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.78em;">Intimida<span class="stl_11">tion</span></span><span class="stl_89" style="word-spacing:0.01em;">&nbsp;(Cha) &nbsp;</span></div>
-					<div class="stl_01 stl_56" style="top: 35.9709em; left:9.5206em;"><span class="stl_87">78xx &nbsp;</span></div>
-					<div class="stl_01 stl_101" style="top: 33.7783em; left:4.0426em;"><span class="stl_102 stl_12">int-sc<span class="stl_11">o &nbsp;</span></span></div>
+					<div class="stl_01 stl_47" style="top: 33.5441em; left:9.5206em;"><span class="stl_87 stl_50"><%= @npc.skills_insight %></span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Insigh<span class="stl_11">t</span></span><span class="stl_89" style="word-spacing:0.02em;">&nbsp;(Wis) &nbsp;</span></div>
+					<div class="stl_01 stl_56" style="top: 34.6661em; left:9.5206em;"><span class="stl_87 stl_50"><%= @npc.skills_intimidation %></span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.78em;">Intimida<span class="stl_11">tion</span></span><span class="stl_89" style="word-spacing:0.01em;">&nbsp;(Cha) &nbsp;</span></div>
+					<div class="stl_01 stl_56" style="top: 35.9709em; left:9.5206em;"><span class="stl_87"><%= @npc.skills_investigation %></span></div>
+					<div class="stl_01 stl_101" style="top: 33.7783em; left:4.0426em;"><span class="stl_102 stl_12"><%= @npc.core_scores_int %></span></div>
 					<div class="stl_01" style="top: 36.0097em; left:3.6756em;"><span class="stl_19 stl_12">WISDO<span class="stl_11">M &nbsp;</span></span></div>
 					<div class="stl_01" style="top: 35.8825em; left:10.9169em;"><span class="stl_09 stl_50" style="word-spacing:-0.03em;">Investigation </span><span class="stl_89 stl_50" style="word-spacing:-0.02em;">(Int) &nbsp;</span></div>
-					<div class="stl_01 stl_94" style="top: 36.9161em; left:9.5206em;"><span class="stl_87 stl_49">79x<span class="stl_50">x</span></span><span class="stl_87 stl_50" style="word-spacing:1.14em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Medicine</span><span class="stl_89 stl_50" style="word-spacing:-0.03em;">&nbsp;(Wis) &nbsp;</span></div>
-					<div class="stl_01 stl_56" style="top: 38.0501em; left:9.5206em;"><span class="stl_87 stl_50">80xx</span><span class="stl_87 stl_50" style="word-spacing:1.16em;">&nbsp;</span><span class="stl_09 stl_11" style="word-spacing:0.78em;">Natu<span class="stl_50">re</span></span><span class="stl_89" style="word-spacing:0.01em;">&nbsp;(Int) &nbsp;</span></div>
-					<div class="stl_01 stl_103" style="top: 37.3935em; left:3.2388em;"><span class="stl_104 stl_12">WIS-mo<span class="stl_11">d &nbsp;</span></span></div>
+					<div class="stl_01 stl_94" style="top: 36.9161em; left:9.5206em;"><span class="stl_87 stl_49"><%= @npc.skills_medicine %></span><span class="stl_87 stl_50" style="word-spacing:1.14em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Medicine</span><span class="stl_89 stl_50" style="word-spacing:-0.03em;">&nbsp;(Wis) &nbsp;</span></div>
+					<div class="stl_01 stl_56" style="top: 38.0501em; left:9.5206em;"><span class="stl_87 stl_50"><%= @npc.skills_nature %></span><span class="stl_87 stl_50" style="word-spacing:1.16em;">&nbsp;</span><span class="stl_09 stl_11" style="word-spacing:0.78em;">Natu<span class="stl_50">re</span></span><span class="stl_89" style="word-spacing:0.01em;">&nbsp;(Int) &nbsp;</span></div>
+					<div class="stl_01 stl_103" style="top: 37.3935em; left:3.2388em;"><span class="stl_104 stl_12"><%= @npc.core_modifiers_wis_mod %></span></div>
 					<div class="stl_01 stl_61" style="top: 38.2273em; left:18.7703em;"><span class="stl_99 stl_11">Attacks-Spellca<span class="stl_12">sting-Text &nbsp;</span></span></div>
-					<div class="stl_01 stl_47" style="top: 39.1721em; left:9.5206em;"><span class="stl_87 stl_49">81x<span class="stl_50">x</span></span><span class="stl_87 stl_50" style="word-spacing:1.14em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Perception</span><span class="stl_89 stl_50" style="word-spacing:-0.02em;">&nbsp;(Wis) &nbsp;</span></div>
-					<div class="stl_01 stl_90" style="top: 40.2941em; left:9.5206em;"><span class="stl_87 stl_49">82x<span class="stl_50">x</span></span><span class="stl_87 stl_50" style="word-spacing:1.14em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Performance</span><span class="stl_89 stl_50" style="word-spacing:-0.03em;">&nbsp;(Cha) &nbsp;</span></div>
-					<div class="stl_01 stl_90" style="top: 41.4221em; left:9.5206em;"><span class="stl_87 stl_50">83xx</span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.78em;">Persuas<span class="stl_11">ion</span></span><span class="stl_89" style="word-spacing:0.01em;">&nbsp;(Cha) &nbsp;</span></div>
-					<div class="stl_01 stl_90" style="top: 42.5441em; left:9.5206em;"><span class="stl_87 stl_50">84xx</span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Religi<span class="stl_11">on</span></span><span class="stl_89" style="word-spacing:0.01em;">&nbsp;(Int) &nbsp;</span></div>
-					<div class="stl_01 stl_56" style="top: 43.6661em; left:9.5206em;"><span class="stl_87 stl_50">85xx</span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Sleigh<span class="stl_11">t</span></span><span class="stl_09 stl_50" style="word-spacing:-0.02em;">&nbsp;of</span><span class="stl_09 stl_50" style="word-spacing:-0.02em;">&nbsp;Han<span class="stl_11">d</span></span><span class="stl_89" style="word-spacing:0.02em;">&nbsp;(Dex) &nbsp;</span></div>
-					<div class="stl_01 stl_90" style="top: 44.8001em; left:9.5206em;"><span class="stl_87 stl_50">86xx</span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.78em;">Steal<span class="stl_11">th</span></span><span class="stl_89 stl_50" style="word-spacing:-0.02em;">&nbsp;(De<span class="stl_11">x) &nbsp;</span></span></div>
-					<div class="stl_01 stl_105" style="top: 45.9221em; left:9.5206em;"><span class="stl_87 stl_49">87x<span class="stl_50">x</span></span><span class="stl_87 stl_50" style="word-spacing:1.14em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Survival</span><span class="stl_89 stl_50" style="word-spacing:-0.02em;">&nbsp;(Wis) &nbsp;</span></div>
-					<div class="stl_01 stl_106" style="top: 39.7478em; left:4.0431em;"><span class="stl_107 stl_11">wis-sc<span class="stl_12">o &nbsp;</span></span></div>
+					<div class="stl_01 stl_47" style="top: 39.1721em; left:9.5206em;"><span class="stl_87 stl_49"><%= @npc.skills_perception %></span><span class="stl_87 stl_50" style="word-spacing:1.14em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Perception</span><span class="stl_89 stl_50" style="word-spacing:-0.02em;">&nbsp;(Wis) &nbsp;</span></div>
+					<div class="stl_01 stl_90" style="top: 40.2941em; left:9.5206em;"><span class="stl_87 stl_49"><%= @npc.skills_performance %></span><span class="stl_87 stl_50" style="word-spacing:1.14em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Performance</span><span class="stl_89 stl_50" style="word-spacing:-0.03em;">&nbsp;(Cha) &nbsp;</span></div>
+					<div class="stl_01 stl_90" style="top: 41.4221em; left:9.5206em;"><span class="stl_87 stl_50"><%= @npc.skills_persuasion %></span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.78em;">Persuas<span class="stl_11">ion</span></span><span class="stl_89" style="word-spacing:0.01em;">&nbsp;(Cha) &nbsp;</span></div>
+					<div class="stl_01 stl_90" style="top: 42.5441em; left:9.5206em;"><span class="stl_87 stl_50"><%= @npc.skills_religion %></span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Religi<span class="stl_11">on</span></span><span class="stl_89" style="word-spacing:0.01em;">&nbsp;(Int) &nbsp;</span></div>
+					<div class="stl_01 stl_56" style="top: 43.6661em; left:9.5206em;"><span class="stl_87 stl_50"> <%= @npc.skills_sleight_of_hand %></span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Sleigh<span class="stl_11">t</span></span><span class="stl_09 stl_50" style="word-spacing:-0.02em;">&nbsp;of</span><span class="stl_09 stl_50" style="word-spacing:-0.02em;">&nbsp;Han<span class="stl_11">d</span></span><span class="stl_89" style="word-spacing:0.02em;">&nbsp;(Dex) &nbsp;</span></div>
+					<div class="stl_01 stl_90" style="top: 44.8001em; left:9.5206em;"><span class="stl_87 stl_50"><%= @npc.skills_stealth %></span><span class="stl_87 stl_50" style="word-spacing:1.15em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.78em;">Steal<span class="stl_11">th</span></span><span class="stl_89 stl_50" style="word-spacing:-0.02em;">&nbsp;(De<span class="stl_11">x) &nbsp;</span></span></div>
+					<div class="stl_01 stl_105" style="top: 45.9221em; left:9.5206em;"><span class="stl_87 stl_49"><%= @npc.skills_survival %></span><span class="stl_87 stl_50" style="word-spacing:1.14em;">&nbsp;</span><span class="stl_09 stl_50" style="word-spacing:0.77em;">Survival</span><span class="stl_89 stl_50" style="word-spacing:-0.02em;">&nbsp;(Wis) &nbsp;</span></div>
+					<div class="stl_01 stl_106" style="top: 39.7478em; left:4.0431em;"><span class="stl_107 stl_11"><%= @npc.core_scores_wis %></span></div>
 					<div class="stl_01" style="top: 41.9603em; left:3.4584em;"><span class="stl_19 stl_12">CHARIS<span class="stl_11">MA &nbsp;</span></span></div>
-					<div class="stl_01 stl_108" style="top: 43.3636em; left:3.239em;"><span class="stl_109 stl_11">CHA-mo<span class="stl_12">d &nbsp;</span></span></div>
-					<div class="stl_01 stl_59" style="top: 45.7008em; left:4.0403em;"><span class="stl_60 stl_12">cha-sco &nbsp;</span></div>
+					<div class="stl_01 stl_108" style="top: 43.3636em; left:3.239em;"><span class="stl_109 stl_11"><%= @npc.core_modifiers_cha_mod %></span></div>
+					<div class="stl_01 stl_59" style="top: 45.7008em; left:4.0403em;"><span class="stl_60 stl_12"><%= @npc.core_scores_cha %></span></div>
 					<div class="stl_01" style="top: 47.5195em; left:11.6695em;"><span class="stl_19">SKILLS &nbsp;</span></div>
 					<div class="stl_01" style="top: 47.5195em; left:22.4341em;"><span class="stl_19 stl_12" style="word-spacing:0.03em;">ATTACKS &amp; SPELLCASTING &nbsp;</span></div>
 					<div class="stl_01" style="top: 49.695em; left:7.3728em;"><span class="stl_34 stl_12" style="word-spacing:-0.03em;">PASSIVE WISDOM (PERCEPTION) &nbsp;</span></div>
-					<div class="stl_01" style="top: 49.4909em; left:2.9275em;"><span class="stl_110">PW &nbsp;</span></div>
+					<div class="stl_01" style="top: 49.4909em; left:2.9275em;"><span class="stl_110"><%= @npc.passive_perception %></span></div>
 					<div class="stl_01" style="top: 50.3817em; left:17.8332em;"><span class="stl_97 stl_12">CP &nbsp;</span></div>
 					<div class="stl_01" style="top: 52.5245em; left:17.8502em;"><span class="stl_97 stl_12">SP &nbsp;</span></div>
 					<div class="stl_01" style="top: 54.6973em; left:17.849em;"><span class="stl_97 stl_12">EP &nbsp;</span></div>
 					<div class="stl_01" style="top: 56.8701em; left:17.8085em;"><span class="stl_97 stl_12">GP &nbsp;</span></div>
 					<div class="stl_01" style="top: 59.0129em; left:17.8449em;"><span class="stl_97 stl_12">PP &nbsp;</span></div>
-					<div class="stl_01 stl_111" style="top: 50.3038em; left:19.3106em;"><span class="stl_112">copper &nbsp;</span></div>
+					<div class="stl_01 stl_111" style="top: 50.3038em; left:19.3106em;"><span class="stl_112">0</span></div>
 					<div class="stl_01 stl_22" style="top: 49.8673em; left:22.5803em;"><span class="stl_99 stl_12">Equipmen<span class="stl_11">t-Text &nbsp;</span></span></div>
-					<div class="stl_01 stl_113" style="top: 52.334em; left:19.3103em;"><span class="stl_114 stl_11">silv<span class="stl_12">er &nbsp;</span></span></div>
+					<div class="stl_01 stl_113" style="top: 52.334em; left:19.3103em;"><span class="stl_114 stl_11">0</span></div>
 					<div class="stl_01 stl_115" style="top: 52.6832em; left:3.0203em;"><span class="stl_23">Profs-And-Lang &nbsp;</span></div>
-					<div class="stl_01 stl_116" style="top: 54.6935em; left:19.3103em;"><span class="stl_117 stl_11">E-mone<span class="stl_12">y &nbsp;</span></span></div>
-					<div class="stl_01 stl_118" style="top: 56.6444em; left:19.3538em;"><span class="stl_119 stl_11">Gol<span class="stl_12">d &nbsp;</span></span></div>
-					<div class="stl_01 stl_120" style="top: 58.8081em; left:19.5871em;"><span class="stl_121 stl_11">Pla<span class="stl_12">t &nbsp;</span></span></div>
+					<div class="stl_01 stl_116" style="top: 54.6935em; left:19.3103em;"><span class="stl_117 stl_11">0</span></div>
+					<div class="stl_01 stl_118" style="top: 56.6444em; left:19.3538em;"><span class="stl_119 stl_11"><%= @npc.gold %></span></div>
+					<div class="stl_01 stl_120" style="top: 58.8081em; left:19.5871em;"><span class="stl_121 stl_11">0</span></div>
 					<div class="stl_01" style="top: 63.1255em; left:5.1402em;"><span class="stl_19 stl_12" style="word-spacing:0.03em;">OTHER PROFICIENCIES &amp; LANGUAGES &nbsp;</span></div>
 					<div class="stl_01" style="top: 63.1255em; left:24.0381em;"><span class="stl_19 stl_12">EQUIPME<span class="stl_11">NT &nbsp;</span></span></div>
 					<div class="stl_01" style="top: 63.1402em; left:38.8738em;"><span class="stl_19 stl_12" style="word-spacing:0.03em;">FEATURES &amp; TRAITS &nbsp;</span></div>
@@ -4191,7 +4197,7 @@ a:visited {text-decoration:none;}
 				<div class="stl_05 stl_06">
 					<div class="stl_01 stl_124" style="top: 4.4721em; left:22.3333em;"><span class="stl_08">age-text &nbsp;</span></div>
 					<div class="stl_01" style="top: 5.5785em; left:22.1433em;"><span class="stl_125 stl_12">AGE &nbsp;</span></div>
-					<div class="stl_01 stl_124" style="top: 4.4721em; left:31.7627em;"><span class="stl_08">height-text &nbsp;</span></div>
+					<div class="stl_01 stl_124" style="top: 4.4721em; left:31.7627em;"><span class="stl_08"><%= @npc.size %></span></div>
 					<div class="stl_01" style="top: 5.5785em; left:31.5397em;"><span class="stl_125 stl_11">HEIGH<span class="stl_12">T &nbsp;</span></span></div>
 					<div class="stl_01 stl_124" style="top: 4.4721em; left:39.77em;"><span class="stl_08">weight-text &nbsp;</span></div>
 					<div class="stl_01" style="top: 5.5785em; left:39.6031em;"><span class="stl_125 stl_11">WEIGH<span class="stl_12">T &nbsp;</span></span></div>
@@ -4203,15 +4209,15 @@ a:visited {text-decoration:none;}
 					<div class="stl_01" style="top: 7.7519em; left:22.1433em;"><span class="stl_125">EYES &nbsp;</span></div>
 					<div class="stl_01" style="top: 7.7514em; left:31.5397em;"><span class="stl_125">SKIN &nbsp;</span></div>
 					<div class="stl_01" style="top: 7.7677em; left:39.6031em;"><span class="stl_125">HAIR &nbsp;</span></div>
-					<div class="stl_01 stl_126" style="top: 11.3486em; left:18.9167em;"><span class="stl_23">Allies-orgs-text &nbsp;</span></div>
+					<div class="stl_01 stl_126" style="top: 11.3486em; left:18.9167em;"><span class="stl_23"></span></div>
 					<div class="stl_01" style="top: 12.1215em; left:35.175em;"><span class="stl_127 stl_12">NAME &nbsp;</span></div>
 					<div class="stl_01" style="top: 24.6591em; left:39.9782em;"><span class="stl_128">SYMBOL &nbsp;</span></div>
 					<div class="stl_01" style="top: 29.4577em; left:6.6435em;"><span class="stl_129 stl_12" style="word-spacing:0.04em;">CHARACTER APPEARANCE &nbsp;</span></div>
 					<div class="stl_01" style="top: 29.4577em; left:30.1508em;"><span class="stl_129 stl_12" style="word-spacing:0.06em;">ALLIES &amp; ORGANIZATIONS &nbsp;</span></div>
-					<div class="stl_01 stl_61" style="top: 31.6774em; left:18.815em;"><span class="stl_23">additional-features-text &nbsp;</span></div>
-					<div class="stl_01" style="top: 32.5174em; left:3.065em;"><span class="stl_23">char-backstory-text &nbsp;</span></div>
+					<div class="stl_01 stl_61" style="top: 31.6774em; left:18.815em;"><span class="stl_23"></span></div>
+					<div class="stl_01" style="top: 32.5174em; left:3.065em;"><span class="stl_23"></span></div>
 					<div class="stl_01" style="top: 48.5314em; left:29.3686em;"><span class="stl_129 stl_12" style="word-spacing:0.05em;">ADDITIONAL FEATURES &amp; TRAITS &nbsp;</span></div>
-					<div class="stl_01" style="top: 50.6674em; left:18.815em;"><span class="stl_23">treasure-text &nbsp;</span></div>
+					<div class="stl_01" style="top: 50.6674em; left:18.815em;"><span class="stl_23"></span></div>
 					<div class="stl_01" style="top: 63.1293em; left:6.8093em;"><span class="stl_129 stl_12" style="word-spacing:0.01em;">CHARACTER BACKSTORY &nbsp;</span></div>
 					<div class="stl_01" style="top: 63.1255em; left:32.1349em;"><span class="stl_129 stl_12">TREASU<span class="stl_11">RE &nbsp;</span></span></div>
 					<div class="stl_01" style="top: 64.5041em; left:14.4044em;z-index:203; "><span class="stl_130 stl_131" style="word-spacing:-0.23em;">TM &amp;</span><span class="stl_130 stl_131" style="word-spacing:-0.1em;">&nbsp;©</span><span class="stl_130 stl_131" style="word-spacing:-0.04em;">&nbsp;2014</span><span class="stl_130 stl_131" style="word-spacing:-0.01em;">&nbsp;Wizards</span><span class="stl_130 stl_131" style="word-spacing:-0.02em;">&nbsp;of</span><span class="stl_130 stl_131" style="word-spacing:-0.09em;">&nbsp;the</span><span class="stl_130 stl_131" style="word-spacing:-0.03em;">&nbsp;Coast</span><span class="stl_130 stl_131" style="word-spacing:-0.15em;">&nbsp;LLC. Permission</span><span class="stl_130 stl_131" style="word-spacing:-0.03em;">&nbsp;is</span><span class="stl_130 stl_131" style="word-spacing:-0.06em;">&nbsp;granted</span><span class="stl_130 stl_131" style="word-spacing:-0.04em;">&nbsp;to</span><span class="stl_130 stl_131" style="word-spacing:-0.09em;">&nbsp;photocopy</span><span class="stl_130 stl_131" style="word-spacing:-0.08em;">&nbsp;this</span><span class="stl_130 stl_131" style="word-spacing:-0.07em;">&nbsp;document</span><span class="stl_130 stl_131" style="word-spacing:-0.05em;">&nbsp;for personal</span><span class="stl_130 stl_131" style="word-spacing:-0.14em;">&nbsp;use. &nbsp;</span></div>
@@ -4241,16 +4247,16 @@ a:visited {text-decoration:none;}
 					<div class="stl_01 stl_142" style="top: 12.4993em; left:20.239em;"><span class="stl_143 stl_11">3-slot<span class="stl_12">s &nbsp;</span></span></div>
 					<div class="stl_01" style="top: 12.4557em; left:34.4664em;"><span class="stl_140">6</span></div>
 					<div class="stl_01 stl_144" style="top: 12.4993em; left:35.833em;"><span class="stl_143 stl_11">6-slot<span class="stl_12">s &nbsp;</span></span></div>
-					<div class="stl_01 stl_145" style="top: 14.553em; left:3.5267em;"><span class="stl_146">Cantrip-1 &nbsp;</span></div>
+					<div class="stl_01 stl_145" style="top: 14.553em; left:3.5267em;"><span class="stl_146"><%= @npc.spells.where(level:0)[0].name unless @npc.spells.where(level:0)[0].nil? %></span></div>
 					<div class="stl_01 stl_147" style="top: 14.8249em; left:19.3127em;"><span class="stl_148">3rd-level-1 &nbsp;</span></div>
 					<div class="stl_01 stl_147" style="top: 14.8249em; left:34.9067em;"><span class="stl_149">6th-level-1 &nbsp;</span></div>
-					<div class="stl_01 stl_145" style="top: 15.7149em; left:3.5267em;"><span class="stl_146">Cantrip-2 &nbsp;</span></div>
-					<div class="stl_01 stl_40" style="top: 16.8767em; left:3.5267em;"><span class="stl_146">Cantrip-3 &nbsp;</span></div>
-					<div class="stl_01 stl_40" style="top: 18.0385em; left:3.5267em;"><span class="stl_146">Cantrip-4 &nbsp;</span></div>
-					<div class="stl_01 stl_40" style="top: 19.2004em; left:3.5267em;"><span class="stl_146">Cantrip-5 &nbsp;</span></div>
-					<div class="stl_01 stl_144" style="top: 20.3749em; left:3.5267em;"><span class="stl_146">Cantrip-6 &nbsp;</span></div>
-					<div class="stl_01 stl_144" style="top: 21.5494em; left:3.5267em;"><span class="stl_146">Cantrip-7 &nbsp;</span></div>
-					<div class="stl_01 stl_40" style="top: 22.7141em; left:3.5267em;"><span class="stl_146">Cantrip-8 &nbsp;</span></div>
+					<div class="stl_01 stl_145" style="top: 15.7149em; left:3.5267em;"><span class="stl_146"><%= @npc.spells.where(level:0)[1].name unless @npc.spells.where(level:0)[1].nil? %> </span></div>
+					<div class="stl_01 stl_40" style="top: 16.8767em; left:3.5267em;"><span class="stl_146"><%= @npc.spells.where(level:0)[2].name unless @npc.spells.where(level:0)[2].nil? %> </span></div>
+					<div class="stl_01 stl_40" style="top: 18.0385em; left:3.5267em;"><span class="stl_146"><%= @npc.spells.where(level:0)[3].name unless @npc.spells.where(level:0)[3].nil? %> </span></div>
+					<div class="stl_01 stl_40" style="top: 19.2004em; left:3.5267em;"><span class="stl_146"><%= @npc.spells.where(level:0)[4].name unless @npc.spells.where(level:0)[4].nil? %> </span></div>
+					<div class="stl_01 stl_144" style="top: 20.3749em; left:3.5267em;"><span class="stl_146"><%= @npc.spells.where(level:0)[5].name unless @npc.spells.where(level:0)[5].nil? %> </span></div>
+					<div class="stl_01 stl_144" style="top: 21.5494em; left:3.5267em;"><span class="stl_146"><%= @npc.spells.where(level:0)[6].name unless @npc.spells.where(level:0)[6].nil? %> </span></div>
+					<div class="stl_01 stl_40" style="top: 22.7141em; left:3.5267em;"><span class="stl_146"><%= @npc.spells.where(level:0)[7].name unless @npc.spells.where(level:0)[7].nil? %> </span></div>
 					<div class="stl_01 stl_147" style="top: 15.9979em; left:19.3127em;"><span class="stl_148">3</span></div>
 					<div class="stl_01 stl_105" style="top: 17.1619em; left:19.3127em;"><span class="stl_148">3</span></div>
 					<div class="stl_01 stl_150" style="top: 18.3259em; left:19.3127em;"><span class="stl_148">3</span></div>
@@ -4300,30 +4306,18 @@ a:visited {text-decoration:none;}
 					<div class="stl_01 stl_105" style="top: 35.9704em; left:34.9067em;"><span class="stl_149">7th-level-7 &nbsp;</span></div>
 					<div class="stl_01 stl_151" style="top: 37.1389em; left:34.9067em;"><span class="stl_149">7th-level-8 &nbsp;</span></div>
 					<div class="stl_01 stl_105" style="top: 38.3044em; left:34.9067em;"><span class="stl_149">7th-level-9 &nbsp;</span></div>
-					<div class="stl_01 stl_147" style="top: 30.1384em; left:3.5642em;"><span class="stl_148">1</span></div>
-					<div class="stl_01 stl_105" style="top: 31.3024em; left:3.5642em;"><span class="stl_148">1</span></div>
-					<div class="stl_01 stl_105" style="top: 32.4664em; left:3.5642em;"><span class="stl_148">1</span></div>
-					<div class="stl_01 stl_151" style="top: 33.6364em; left:3.5642em;"><span class="stl_148">1</span></div>
-					<div class="stl_01 stl_151" style="top: 34.8031em; left:3.5642em;"><span class="stl_148">1</span></div>
-					<div class="stl_01 stl_151" style="top: 35.9704em; left:3.5642em;"><span class="stl_148">1</span></div>
-					<div class="stl_01 stl_105" style="top: 37.1344em; left:3.5642em;"><span class="stl_148">1</span></div>
-					<div class="stl_01 stl_151" style="top: 38.3044em; left:3.5642em;"><span class="stl_148">1</span></div>
-					<div class="stl_01 stl_105" style="top: 39.4684em; left:3.5642em;"><span class="stl_148">1</span></div>
-					<div class="stl_01 stl_105" style="top: 40.6324em; left:3.5642em;"><span class="stl_148">1</span></div>
-					<div class="stl_01 stl_151" style="top: 41.8024em; left:3.5642em;"><span class="stl_148">1</span></div>
-					<div class="stl_01 stl_105" style="top: 42.9664em; left:3.5642em;"><span class="stl_148">1</span></div>
-					<div class="stl_01 stl_147" style="top: 30.1384em; left:3.826em;"><span class="stl_148">st-level-1 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 31.3024em; left:3.826em;"><span class="stl_148">st-level-2 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 32.4664em; left:3.826em;"><span class="stl_148">st-level-3 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 33.6364em; left:3.826em;"><span class="stl_148">st-level-4 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 34.8031em; left:3.826em;"><span class="stl_148">st-level-5 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 35.9704em; left:3.826em;"><span class="stl_148">st-level-6 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 37.1344em; left:3.826em;"><span class="stl_148">st-level-7 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 38.3044em; left:3.826em;"><span class="stl_148">st-level-8 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 39.4684em; left:3.826em;"><span class="stl_148">st-level-9 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 40.6324em; left:3.826em;"><span class="stl_148">st-level-10 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 41.8024em; left:3.826em;"><span class="stl_148">st-level-11 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 42.9664em; left:3.826em;"><span class="stl_148">st-level-12 &nbsp;</span></div>
+					<div class="stl_01 stl_147" style="top: 30.1384em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[0].name unless @npc.spells.where(level:1)[0].nil? %></span></div>
+					<div class="stl_01 stl_105" style="top: 31.3024em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[1].name unless @npc.spells.where(level:1)[1].nil? %></span></div>
+					<div class="stl_01 stl_105" style="top: 32.4664em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[2].name unless @npc.spells.where(level:1)[2].nil? %></span></div>
+					<div class="stl_01 stl_151" style="top: 33.6364em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[3].name unless @npc.spells.where(level:1)[3].nil? %></span></div>
+					<div class="stl_01 stl_151" style="top: 34.8031em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[4].name unless @npc.spells.where(level:1)[4].nil? %></span></div>
+					<div class="stl_01 stl_151" style="top: 35.9704em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[5].name unless @npc.spells.where(level:1)[5].nil? %></span></div>
+					<div class="stl_01 stl_105" style="top: 37.1344em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[6].name unless @npc.spells.where(level:1)[6].nil? %></span></div>
+					<div class="stl_01 stl_151" style="top: 38.3044em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[7].name unless @npc.spells.where(level:1)[7].nil? %></span></div>
+					<div class="stl_01 stl_105" style="top: 39.4684em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[8].name unless @npc.spells.where(level:1)[8].nil? %></span></div>
+					<div class="stl_01 stl_105" style="top: 40.6324em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[9].name unless @npc.spells.where(level:1)[9].nil? %></span></div>
+					<div class="stl_01 stl_151" style="top: 41.8024em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[10].name unless @npc.spells.where(level:1)[10].nil? %></span></div>
+					<div class="stl_01 stl_105" style="top: 42.9664em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[11].name unless @npc.spells.where(level:1)[11].nil? %></span></div>
 					<div class="stl_01" style="top: 31.2545em; left:18.8727em;"><span class="stl_140">4</span></div>
 					<div class="stl_01 stl_142" style="top: 31.2973em; left:20.239em;"><span class="stl_143 stl_11">4-slot<span class="stl_12">s &nbsp;</span></span></div>
 					<div class="stl_01 stl_147" style="top: 33.6229em; left:19.3127em;"><span class="stl_148">4th-level-1 &nbsp;</span></div>
@@ -4355,32 +4349,32 @@ a:visited {text-decoration:none;}
 					<div class="stl_01 stl_56" style="top: 46.6219em; left:35.1685em;"><span class="stl_149">th-level-4 &nbsp;</span></div>
 					<div class="stl_01" style="top: 45.4808em; left:3.1227em;"><span class="stl_140">2</span></div>
 					<div class="stl_01 stl_157" style="top: 45.5248em; left:4.4905em;"><span class="stl_158 stl_11">2-slot<span class="stl_12">s &nbsp;</span></span></div>
-					<div class="stl_01 stl_147" style="top: 47.8504em; left:3.5642em;"><span class="stl_148">2</span></div>
-					<div class="stl_01 stl_151" style="top: 49.0234em; left:3.5642em;"><span class="stl_148">2</span></div>
-					<div class="stl_01 stl_161" style="top: 50.1874em; left:3.5642em;"><span class="stl_148">2</span></div>
-					<div class="stl_01 stl_161" style="top: 51.3514em; left:3.5642em;"><span class="stl_148">2</span></div>
-					<div class="stl_01 stl_164" style="top: 52.5184em; left:3.5642em;"><span class="stl_148">2</span></div>
-					<div class="stl_01 stl_161" style="top: 53.6824em; left:3.5642em;"><span class="stl_148">2</span></div>
-					<div class="stl_01 stl_105" style="top: 54.8464em; left:3.5642em;"><span class="stl_148">2</span></div>
-					<div class="stl_01 stl_144" style="top: 56.0164em; left:3.5642em;"><span class="stl_148">2</span></div>
-					<div class="stl_01 stl_40" style="top: 57.1804em; left:3.5642em;"><span class="stl_148">2</span></div>
-					<div class="stl_01 stl_165" style="top: 58.35em; left:3.5642em;"><span class="stl_148">2</span></div>
-					<div class="stl_01 stl_151" style="top: 59.5174em; left:3.5642em;"><span class="stl_148">2</span></div>
-					<div class="stl_01 stl_105" style="top: 60.6829em; left:3.5642em;"><span class="stl_148">2</span></div>
-					<div class="stl_01 stl_105" style="top: 61.8484em; left:3.5642em;"><span class="stl_148">2</span></div>
-					<div class="stl_01 stl_147" style="top: 47.8504em; left:3.826em;"><span class="stl_148">nd-level-1 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 49.0234em; left:3.826em;"><span class="stl_148">nd-level-2 &nbsp;</span></div>
-					<div class="stl_01 stl_161" style="top: 50.1874em; left:3.826em;"><span class="stl_148">nd-level-3 &nbsp;</span></div>
-					<div class="stl_01 stl_161" style="top: 51.3514em; left:3.826em;"><span class="stl_148">nd-level-4 &nbsp;</span></div>
-					<div class="stl_01 stl_164" style="top: 52.5184em; left:3.826em;"><span class="stl_148">nd-level-5 &nbsp;</span></div>
-					<div class="stl_01 stl_161" style="top: 53.6824em; left:3.826em;"><span class="stl_148">nd-level-6 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 54.8464em; left:3.826em;"><span class="stl_148">nd-level-7 &nbsp;</span></div>
-					<div class="stl_01 stl_144" style="top: 56.0164em; left:3.826em;"><span class="stl_148">nd-level-8 &nbsp;</span></div>
-					<div class="stl_01 stl_40" style="top: 57.1804em; left:3.826em;"><span class="stl_148">nd-level-9 &nbsp;</span></div>
-					<div class="stl_01 stl_165" style="top: 58.35em; left:3.826em;"><span class="stl_148">nd-level-10 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 59.5174em; left:3.826em;"><span class="stl_148">nd-level-11 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 60.6829em; left:3.826em;"><span class="stl_148">nd-level-12 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 61.8484em; left:3.826em;"><span class="stl_148">nd-level-13 &nbsp;</span></div>
+					<div class="stl_01 stl_147" style="top: 47.8504em; left:3.826em;"><span class="stl_148">
+<%= @npc.spells.where(level:2)[0].name unless @npc.spells.where(level:2)[0].nil? %> </span></div>
+					<div class="stl_01 stl_151" style="top: 49.0234em; left:3.826em;"><span class="stl_148">
+<%= @npc.spells.where(level:2)[1].name unless @npc.spells.where(level:2)[1].nil? %> </span></div>
+					<div class="stl_01 stl_161" style="top: 50.1874em; left:3.826em;"><span class="stl_148">
+<%= @npc.spells.where(level:2)[2].name unless @npc.spells.where(level:2)[2].nil? %> </span></div>
+					<div class="stl_01 stl_161" style="top: 51.3514em; left:3.826em;"><span class="stl_148">
+<%= @npc.spells.where(level:2)[3].name unless @npc.spells.where(level:2)[3].nil? %> </span></div>
+					<div class="stl_01 stl_164" style="top: 52.5184em; left:3.826em;"><span class="stl_148">
+<%= @npc.spells.where(level:2)[4].name unless @npc.spells.where(level:2)[4].nil? %> </span></div>
+					<div class="stl_01 stl_161" style="top: 53.6824em; left:3.826em;"><span class="stl_148">
+<%= @npc.spells.where(level:2)[5].name unless @npc.spells.where(level:2)[5].nil? %> </span></div>
+					<div class="stl_01 stl_105" style="top: 54.8464em; left:3.826em;"><span class="stl_148">
+<%= @npc.spells.where(level:2)[6].name unless @npc.spells.where(level:2)[6].nil? %> </span></div>
+					<div class="stl_01 stl_144" style="top: 56.0164em; left:3.826em;"><span class="stl_148">
+<%= @npc.spells.where(level:2)[7].name unless @npc.spells.where(level:2)[7].nil? %> </span></div>
+					<div class="stl_01 stl_40" style="top: 57.1804em; left:3.826em;"><span class="stl_148">
+<%= @npc.spells.where(level:2)[8].name unless @npc.spells.where(level:2)[8].nil? %> </span></div>
+					<div class="stl_01 stl_165" style="top: 58.35em; left:3.826em;"><span class="stl_148">
+<%= @npc.spells.where(level:2)[9].name unless @npc.spells.where(level:2)[9].nil? %> </span></div>
+					<div class="stl_01 stl_151" style="top: 59.5174em; left:3.826em;"><span class="stl_148">
+<%= @npc.spells.where(level:2)[10].name unless @npc.spells.where(level:2)[10].nil? %> </span></div>
+					<div class="stl_01 stl_105" style="top: 60.6829em; left:3.826em;"><span class="stl_148">
+<%= @npc.spells.where(level:2)[11].name unless @npc.spells.where(level:2)[11].nil? %> </span></div>
+					<div class="stl_01 stl_105" style="top: 61.8484em; left:3.826em;"><span class="stl_148">
+<%= @npc.spells.where(level:2)[12].name unless @npc.spells.where(level:2)[12].nil? %> </span></div>
 					<div class="stl_01 stl_162" style="top: 47.7889em; left:34.9067em;"><span class="stl_149">8th-level-5 &nbsp;</span></div>
 					<div class="stl_01 stl_105" style="top: 48.9529em; left:34.9067em;"><span class="stl_149">8th-level-6 &nbsp;</span></div>
 					<div class="stl_01 stl_105" style="top: 50.1184em; left:34.9067em;"><span class="stl_149">8th-level-7 &nbsp;</span></div>
