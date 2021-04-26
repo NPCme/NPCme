@@ -2,6 +2,7 @@ class NpcPdfsController < ApplicationController
 
   def show
     @npc = NpcModel.where(id: params[:id])[0]
+    @split_spells_slots = @npc.spell_slots.split('{')[1].split('}')[0].split(',').map { |x| x[-1] } unless nil
 
     respond_to do |format|
       format.html
