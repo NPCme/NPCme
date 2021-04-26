@@ -4062,7 +4062,27 @@ a:visited {text-decoration:none;}
 					<div class="stl_01" style="top: 11.3806em; left:12.1964em;"><span class="stl_17 stl_18">INSPIRA<span class="stl_12">TION &nbsp;</span></span></div>
 					<div class="stl_01" style="top: 12.1295em; left:3.4284em;"><span class="stl_19 stl_12">STRENG<span class="stl_11">TH &nbsp;</span></span></div>
 					<div class="stl_01 stl_20" style="top: 12.4156em; left:19.6723em;"><span class="stl_21"><%= @npc.armor_class %></span></div>
-					<div class="stl_01 stl_22" style="top: 12.1273em; left:35.0603em;"><span class="stl_23"><%= @npc.personality_personality %></span></div>
+
+					<div class="stl_01 stl_22" style="top: 12.1273em; left:35.0603em;"><span class="stl_23">
+            <% @npc.personality_personality.scan(/.{1,25}/).each do |p_pers| %>
+              <p><%= p_pers %></p>
+            <% end %>
+          </span></div>
+          <div class="stl_01 stl_53" style="top: 17.8873em; left:35.0603em;"><span class="stl_23">
+            <% @npc.personality_ideal.scan(/.{1,25}/).each do |p_deal| %>
+              <p><%= p_deal %></p>
+            <% end %>
+          </span></div>
+          <div class="stl_01 stl_61" style="top: 22.5073em; left:35.0603em;"><span class="stl_23">
+            <% @npc.personality_bond.scan(/.{1,25}/).each do |p_bond| %>
+              <p><%= p_bond %></p>
+            <% end %>
+            </span></div>
+          <div class="stl_01 stl_53" style="top: 27.0673em; left:35.0603em;"><span class="stl_23">
+            <% @npc.personality_flaw.scan(/.{1,25}/).each do |p_flaw| %>
+              <p><%= p_flaw %></p>
+            <% end %>
+          </span></div>
 					<div class="stl_01 stl_24" style="top: 12.7529em; left:28.8533em;"><span class="stl_25"><%= @npc.speed %></span></div>
 					<div class="stl_01 stl_26" style="top: 12.4483em; left:23.9921em;"><span class="stl_27"><%= @npc.initiative %></span></div>
 					<div class="stl_01" style="top: 14.5599em; left:24.0374em;"><span class="stl_19 stl_12">INITIATI<span class="stl_11">VE &nbsp;</span></span></div>
@@ -4086,7 +4106,6 @@ a:visited {text-decoration:none;}
 					<div class="stl_01" style="top: 18.1168em; left:3.4568em;"><span class="stl_19 stl_12">DEXTERI<span class="stl_11">TY &nbsp;</span></span></div>
 					<div class="stl_01 stl_51" style="top: 18.4877em; left:9.6556em;"><span class="stl_48"><%= @npc.saving_throws_dex %></span></div>
 					<div class="stl_01" style="top: 18.4025em; left:10.9167em;"><span class="stl_09 stl_52">Dexter<span class="stl_49">ity &nbsp;</span></span></div>
-					<div class="stl_01 stl_53" style="top: 17.8873em; left:35.0603em;"><span class="stl_23"><%= @npc.personality_ideal %></span></div>
 					<div class="stl_01 stl_54" style="top: 18.0715em; left:19.7841em;"><span class="stl_55"></span></div>
 					<div class="stl_01 stl_47" style="top: 19.4418em; left:9.6556em;"><span class="stl_48 stl_50" style="word-spacing:1.25em;"><%= @npc.saving_throws_con %></span><span class="stl_09 stl_50" style="word-spacing:0.83em;">Constitution &nbsp;</span></div>
 					<div class="stl_01 stl_56" style="top: 20.5698em; left:9.6556em;"><span class="stl_48 stl_50" style="word-spacing:1.25em;"><%= @npc.saving_throws_int %> </span><span class="stl_09 stl_50" style="word-spacing:0.83em;">Intelligenc<span class="stl_11">e &nbsp;</span></span></div>
@@ -4096,7 +4115,6 @@ a:visited {text-decoration:none;}
 					<div class="stl_01" style="top: 20.3736em; left:40.501em;"><span class="stl_34 stl_12">IDEALS &nbsp;</span></div>
 					<div class="stl_01 stl_59" style="top: 21.8808em; left:4.0403em;"><span class="stl_60 stl_12"><%= @npc.core_scores_dex %></span></div>
 					<div class="stl_01 stl_47" style="top: 22.8138em; left:9.6556em;"><span class="stl_48 stl_50" style="word-spacing:1.24em;"><%= @npc.saving_throws_cha %></span><span class="stl_09 stl_50" style="word-spacing:0.84em;">Charis<span class="stl_11">ma &nbsp;</span></span></div>
-					<div class="stl_01 stl_61" style="top: 22.5073em; left:35.0603em;"><span class="stl_23"><%= @npc.personality_bond %><</span></div>
 					<div class="stl_01 stl_62" style="top: 22.5143em; left:19.4351em;"><span class="stl_63 stl_11"></span></div>
 					<div class="stl_01" style="top: 24.0546em; left:2.8577em;"><span class="stl_19 stl_12">CONSTITUT<span class="stl_11">ION &nbsp;</span></span></div>
 					<div class="stl_01" style="top: 24.2372em; left:10.3857em;"><span class="stl_19 stl_12" style="word-spacing:-0.02em;">SAVING THROWS &nbsp;</span></div>
@@ -4129,9 +4147,8 @@ a:visited {text-decoration:none;}
 					<div class="stl_01" style="top: 26.7826em; left:19.1467em;"><span class="stl_91 stl_92">Total &nbsp;</span></div>
 					<div class="stl_01" style="top: 26.9793em; left:26.2306em;"><span class="stl_34 stl_12">SUCCESSES &nbsp;</span></div>
 					<div class="stl_01" style="top: 28.2293em; left:26.6499em;"><span class="stl_34 stl_12">FAILUR<span class="stl_18">ES &nbsp;</span></span></div>
-					<div class="stl_01 stl_53" style="top: 27.0673em; left:35.0603em;"><span class="stl_23"><%= @npc.personality_flaw %></span></div>
 					<div class="stl_01 stl_59" style="top: 27.8208em; left:4.0403em;"><span class="stl_60 stl_12"><%= @npc.core_scores_con %></span></div>
-					<div class="stl_01" style="top: 27.9628em; left:19.4951em;"><span class="stl_93 stl_11"><%= @npc.hit_dice %>></span></div>
+					<div class="stl_01" style="top: 27.9628em; left:19.4951em;"><span class="stl_93 stl_11"><%= @npc.hit_dice %></span></div>
 					<div class="stl_01" style="top: 29.5068em; left:20.9589em;"><span class="stl_34" style="word-spacing:-0.07em;">HIT DICE &nbsp;</span></div>
 					<div class="stl_01" style="top: 29.5068em; left:27.5455em;"><span class="stl_34 stl_18" style="word-spacing:0.02em;">DEATH SAVE<span class="stl_92">S &nbsp;</span></span></div>
 					<div class="stl_01" style="top: 30.0472em; left:2.9994em;"><span class="stl_19 stl_12">INTELLIGE<span class="stl_11">NCE &nbsp;</span></span></div>
@@ -4243,13 +4260,12 @@ a:visited {text-decoration:none;}
 					<div class="stl_01" style="top: 8.3192em; left:5.8433em;"><span class="stl_139 stl_11">CLAS<span class="stl_12">S &nbsp;</span></span></div>
 					<div class="stl_01" style="top: 12.4557em; left:3.1227em;"><span class="stl_140">0</span></div>
 					<div class="stl_01" style="top: 12.7198em; left:9.3328em;"><span class="stl_141 stl_11">CANTRI<span class="stl_12">PS &nbsp;</span></span></div>
-					<div class="stl_01" style="top: 12.4557em; left:18.8727em;"><span class="stl_140">3</span></div>
-					<div class="stl_01 stl_142" style="top: 12.4993em; left:20.239em;"><span class="stl_143 stl_11">3-slot<span class="stl_12">s &nbsp;</span></span></div>
-					<div class="stl_01" style="top: 12.4557em; left:34.4664em;"><span class="stl_140">6</span></div>
-					<div class="stl_01 stl_144" style="top: 12.4993em; left:35.833em;"><span class="stl_143 stl_11">6-slot<span class="stl_12">s &nbsp;</span></span></div>
+          <div class="stl_01" style="top: 24.4548em; left:2.613em;"><span class="stl_154 stl_12">SPELL &nbsp;</span></div>
+          <div class="stl_01" style="top: 24.9131em; left:2.6053em;"><span class="stl_154 stl_12">LEVEL &nbsp;</span></div>
+          <div class="stl_01" style="top: 25.3037em; left:4.2355em;"><span class="stl_154 stl_18" style="word-spacing:0em;">SLOTS TOTAL &nbsp;</span></div>
+          <div class="stl_01" style="top: 25.3037em; left:10.6426em;"><span class="stl_154 stl_12" style="word-spacing:-0.03em;">SLOTS EXPENDED &nbsp;</span></div>
+          <div class="stl_01" style="top: 28.9549em; left:8.7341em;"><span class="stl_159 stl_12" style="word-spacing:0.03em;">SPELL NAME &nbsp;</span></div>
 					<div class="stl_01 stl_145" style="top: 14.553em; left:3.5267em;"><span class="stl_146"><%= @npc.spells.where(level:0)[0].name unless @npc.spells.where(level:0)[0].nil? %></span></div>
-					<div class="stl_01 stl_147" style="top: 14.8249em; left:19.3127em;"><span class="stl_148">3rd-level-1 &nbsp;</span></div>
-					<div class="stl_01 stl_147" style="top: 14.8249em; left:34.9067em;"><span class="stl_149">6th-level-1 &nbsp;</span></div>
 					<div class="stl_01 stl_145" style="top: 15.7149em; left:3.5267em;"><span class="stl_146"><%= @npc.spells.where(level:0)[1].name unless @npc.spells.where(level:0)[1].nil? %> </span></div>
 					<div class="stl_01 stl_40" style="top: 16.8767em; left:3.5267em;"><span class="stl_146"><%= @npc.spells.where(level:0)[2].name unless @npc.spells.where(level:0)[2].nil? %> </span></div>
 					<div class="stl_01 stl_40" style="top: 18.0385em; left:3.5267em;"><span class="stl_146"><%= @npc.spells.where(level:0)[3].name unless @npc.spells.where(level:0)[3].nil? %> </span></div>
@@ -4257,147 +4273,116 @@ a:visited {text-decoration:none;}
 					<div class="stl_01 stl_144" style="top: 20.3749em; left:3.5267em;"><span class="stl_146"><%= @npc.spells.where(level:0)[5].name unless @npc.spells.where(level:0)[5].nil? %> </span></div>
 					<div class="stl_01 stl_144" style="top: 21.5494em; left:3.5267em;"><span class="stl_146"><%= @npc.spells.where(level:0)[6].name unless @npc.spells.where(level:0)[6].nil? %> </span></div>
 					<div class="stl_01 stl_40" style="top: 22.7141em; left:3.5267em;"><span class="stl_146"><%= @npc.spells.where(level:0)[7].name unless @npc.spells.where(level:0)[7].nil? %> </span></div>
-					<div class="stl_01 stl_147" style="top: 15.9979em; left:19.3127em;"><span class="stl_148">3</span></div>
-					<div class="stl_01 stl_105" style="top: 17.1619em; left:19.3127em;"><span class="stl_148">3</span></div>
-					<div class="stl_01 stl_150" style="top: 18.3259em; left:19.3127em;"><span class="stl_148">3</span></div>
-					<div class="stl_01 stl_151" style="top: 19.4929em; left:19.3127em;"><span class="stl_148">3</span></div>
-					<div class="stl_01 stl_105" style="top: 20.6569em; left:19.3127em;"><span class="stl_148">3</span></div>
-					<div class="stl_01 stl_150" style="top: 21.8209em; left:19.3127em;"><span class="stl_148">3</span></div>
-					<div class="stl_01 stl_151" style="top: 22.9909em; left:19.3127em;"><span class="stl_148">3</span></div>
-					<div class="stl_01 stl_105" style="top: 24.1549em; left:19.3127em;"><span class="stl_148">3</span></div>
-					<div class="stl_01 stl_147" style="top: 15.9979em; left:19.5745em;"><span class="stl_148">rd-level-2 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 17.1619em; left:19.5745em;"><span class="stl_148">rd-level-3 &nbsp;</span></div>
-					<div class="stl_01 stl_150" style="top: 18.3259em; left:19.5745em;"><span class="stl_148">rd-level-4 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 19.4929em; left:19.5745em;"><span class="stl_148">rd-level-5 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 20.6569em; left:19.5745em;"><span class="stl_148">rd-level-6 &nbsp;</span></div>
-					<div class="stl_01 stl_150" style="top: 21.8209em; left:19.5745em;"><span class="stl_148">rd-level-7 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 22.9909em; left:19.5745em;"><span class="stl_148">rd-level-8 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 24.1549em; left:19.5745em;"><span class="stl_148">rd-level-9 &nbsp;</span></div>
-					<div class="stl_01 stl_152" style="top: 15.9904em; left:34.9067em;"><span class="stl_149">6th-level-2 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 17.1619em; left:34.9067em;"><span class="stl_149">6th-level-3 &nbsp;</span></div>
-					<div class="stl_01 stl_153" style="top: 18.3259em; left:34.9067em;"><span class="stl_149">6th-level-4 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 19.4929em; left:34.9067em;"><span class="stl_149">6th-level-5 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 20.6569em; left:34.9067em;"><span class="stl_149">6th-level-6 &nbsp;</span></div>
-					<div class="stl_01 stl_153" style="top: 21.8224em; left:34.9067em;"><span class="stl_149">6th-level-7 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 22.9909em; left:34.9067em;"><span class="stl_149">6th-level-8 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 24.1564em; left:34.9067em;"><span class="stl_149">6th-level-9 &nbsp;</span></div>
-					<div class="stl_01" style="top: 24.4548em; left:2.613em;"><span class="stl_154 stl_12">SPELL &nbsp;</span></div>
-					<div class="stl_01" style="top: 24.9131em; left:2.6053em;"><span class="stl_154 stl_12">LEVEL &nbsp;</span></div>
-					<div class="stl_01" style="top: 25.3037em; left:4.2355em;"><span class="stl_154 stl_18" style="word-spacing:0em;">SLOTS TOTAL &nbsp;</span></div>
-					<div class="stl_01" style="top: 25.3037em; left:10.6426em;"><span class="stl_154 stl_12" style="word-spacing:-0.03em;">SLOTS EXPENDED &nbsp;</span></div>
-					<div class="stl_01 stl_155" style="top: 25.3245em; left:19.3127em;"><span class="stl_156 stl_11">3rd-level-1<span class="stl_12">0 &nbsp;</span></span></div>
-					<div class="stl_01 stl_147" style="top: 26.4919em; left:19.3127em;"><span class="stl_148">3</span></div>
-					<div class="stl_01 stl_105" style="top: 27.6574em; left:19.3127em;"><span class="stl_148">3</span></div>
-					<div class="stl_01 stl_105" style="top: 28.8229em; left:19.3127em;"><span class="stl_148">3</span></div>
-					<div class="stl_01 stl_147" style="top: 26.4919em; left:19.5745em;"><span class="stl_148">rd-level-11 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 27.6574em; left:19.5745em;"><span class="stl_148">rd-level-12 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 28.8229em; left:19.5745em;"><span class="stl_148">rd-level-13 &nbsp;</span></div>
-					<div class="stl_01" style="top: 26.4334em; left:3.1227em;"><span class="stl_140">1</span></div>
-					<div class="stl_01 stl_157" style="top: 26.4763em; left:4.4905em;"><span class="stl_158 stl_11">1-slot<span class="stl_12">s &nbsp;</span></span></div>
-					<div class="stl_01" style="top: 26.6017em; left:34.4664em;"><span class="stl_140">7</span></div>
-					<div class="stl_01 stl_142" style="top: 26.6473em; left:35.833em;"><span class="stl_143 stl_11">7-slot<span class="stl_12">s &nbsp;</span></span></div>
-					<div class="stl_01" style="top: 28.9549em; left:8.7341em;"><span class="stl_159 stl_12" style="word-spacing:0.03em;">SPELL NAME &nbsp;</span></div>
-					<div class="stl_01 stl_147" style="top: 28.9729em; left:34.9067em;"><span class="stl_149">7th-level-1 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 30.1384em; left:34.9067em;"><span class="stl_149">7th-level-2 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 31.3099em; left:34.9067em;"><span class="stl_149">7th-level-3 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 32.4739em; left:34.9067em;"><span class="stl_149">7th-level-4 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 33.6409em; left:34.9067em;"><span class="stl_149">7th-level-5 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 34.8049em; left:34.9067em;"><span class="stl_149">7th-level-6 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 35.9704em; left:34.9067em;"><span class="stl_149">7th-level-7 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 37.1389em; left:34.9067em;"><span class="stl_149">7th-level-8 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 38.3044em; left:34.9067em;"><span class="stl_149">7th-level-9 &nbsp;</span></div>
-					<div class="stl_01 stl_147" style="top: 30.1384em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[0].name unless @npc.spells.where(level:1)[0].nil? %></span></div>
-					<div class="stl_01 stl_105" style="top: 31.3024em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[1].name unless @npc.spells.where(level:1)[1].nil? %></span></div>
-					<div class="stl_01 stl_105" style="top: 32.4664em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[2].name unless @npc.spells.where(level:1)[2].nil? %></span></div>
-					<div class="stl_01 stl_151" style="top: 33.6364em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[3].name unless @npc.spells.where(level:1)[3].nil? %></span></div>
-					<div class="stl_01 stl_151" style="top: 34.8031em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[4].name unless @npc.spells.where(level:1)[4].nil? %></span></div>
-					<div class="stl_01 stl_151" style="top: 35.9704em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[5].name unless @npc.spells.where(level:1)[5].nil? %></span></div>
-					<div class="stl_01 stl_105" style="top: 37.1344em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[6].name unless @npc.spells.where(level:1)[6].nil? %></span></div>
-					<div class="stl_01 stl_151" style="top: 38.3044em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[7].name unless @npc.spells.where(level:1)[7].nil? %></span></div>
-					<div class="stl_01 stl_105" style="top: 39.4684em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[8].name unless @npc.spells.where(level:1)[8].nil? %></span></div>
-					<div class="stl_01 stl_105" style="top: 40.6324em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[9].name unless @npc.spells.where(level:1)[9].nil? %></span></div>
-					<div class="stl_01 stl_151" style="top: 41.8024em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[10].name unless @npc.spells.where(level:1)[10].nil? %></span></div>
-					<div class="stl_01 stl_105" style="top: 42.9664em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[11].name unless @npc.spells.where(level:1)[11].nil? %></span></div>
-					<div class="stl_01" style="top: 31.2545em; left:18.8727em;"><span class="stl_140">4</span></div>
-					<div class="stl_01 stl_142" style="top: 31.2973em; left:20.239em;"><span class="stl_143 stl_11">4-slot<span class="stl_12">s &nbsp;</span></span></div>
-					<div class="stl_01 stl_147" style="top: 33.6229em; left:19.3127em;"><span class="stl_148">4th-level-1 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 34.7959em; left:19.3127em;"><span class="stl_148">4th-level-2 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 35.9599em; left:19.3127em;"><span class="stl_148">4th-level-3 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 37.1239em; left:19.3127em;"><span class="stl_148">4th-level-4 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 38.2909em; left:19.3127em;"><span class="stl_148">4th-level-5 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 39.4549em; left:19.3127em;"><span class="stl_148">4th-level-6 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 40.6189em; left:19.3127em;"><span class="stl_148">4th-level-7 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 41.7889em; left:19.3127em;"><span class="stl_148">4th-level-8 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 42.9529em; left:19.3127em;"><span class="stl_148">4th-level-9 &nbsp;</span></div>
-					<div class="stl_01" style="top: 40.7521em; left:34.4664em;"><span class="stl_140">8</span></div>
-					<div class="stl_01 stl_142" style="top: 40.7953em; left:35.833em;"><span class="stl_143 stl_11">8-slot<span class="stl_12">s &nbsp;</span></span></div>
-					<div class="stl_01 stl_147" style="top: 43.1209em; left:34.9067em;"><span class="stl_149">8</span></div>
-					<div class="stl_01 stl_147" style="top: 43.1209em; left:35.1685em;"><span class="stl_149">th-level-1 &nbsp;</span></div>
-					<div class="stl_01 stl_160" style="top: 44.1225em; left:19.3127em;"><span class="stl_156">4</span></div>
-					<div class="stl_01 stl_151" style="top: 45.2899em; left:19.3127em;"><span class="stl_148">4</span></div>
-					<div class="stl_01 stl_161" style="top: 46.4554em; left:19.3127em;"><span class="stl_148">4</span></div>
-					<div class="stl_01 stl_105" style="top: 47.6209em; left:19.3127em;"><span class="stl_148">4</span></div>
-					<div class="stl_01 stl_160" style="top: 44.1225em; left:19.5745em;"><span class="stl_156">th-level-10 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 45.2899em; left:19.5745em;"><span class="stl_148">th-level-11 &nbsp;</span></div>
-					<div class="stl_01 stl_161" style="top: 46.4554em; left:19.5745em;"><span class="stl_148">th-level-12 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 47.6209em; left:19.5745em;"><span class="stl_148">th-level-13 &nbsp;</span></div>
-					<div class="stl_01 stl_162" style="top: 44.2864em; left:34.9067em;"><span class="stl_149">8</span></div>
-					<div class="stl_01 stl_163" style="top: 45.4579em; left:34.9067em;"><span class="stl_149">8</span></div>
-					<div class="stl_01 stl_56" style="top: 46.6219em; left:34.9067em;"><span class="stl_149">8</span></div>
-					<div class="stl_01 stl_162" style="top: 44.2864em; left:35.1685em;"><span class="stl_149">th-level-2 &nbsp;</span></div>
-					<div class="stl_01 stl_163" style="top: 45.4579em; left:35.1685em;"><span class="stl_149">th-level-3 &nbsp;</span></div>
-					<div class="stl_01 stl_56" style="top: 46.6219em; left:35.1685em;"><span class="stl_149">th-level-4 &nbsp;</span></div>
-					<div class="stl_01" style="top: 45.4808em; left:3.1227em;"><span class="stl_140">2</span></div>
-					<div class="stl_01 stl_157" style="top: 45.5248em; left:4.4905em;"><span class="stl_158 stl_11">2-slot<span class="stl_12">s &nbsp;</span></span></div>
-					<div class="stl_01 stl_147" style="top: 47.8504em; left:3.826em;"><span class="stl_148">
-<%= @npc.spells.where(level:2)[0].name unless @npc.spells.where(level:2)[0].nil? %> </span></div>
-					<div class="stl_01 stl_151" style="top: 49.0234em; left:3.826em;"><span class="stl_148">
-<%= @npc.spells.where(level:2)[1].name unless @npc.spells.where(level:2)[1].nil? %> </span></div>
-					<div class="stl_01 stl_161" style="top: 50.1874em; left:3.826em;"><span class="stl_148">
-<%= @npc.spells.where(level:2)[2].name unless @npc.spells.where(level:2)[2].nil? %> </span></div>
-					<div class="stl_01 stl_161" style="top: 51.3514em; left:3.826em;"><span class="stl_148">
-<%= @npc.spells.where(level:2)[3].name unless @npc.spells.where(level:2)[3].nil? %> </span></div>
-					<div class="stl_01 stl_164" style="top: 52.5184em; left:3.826em;"><span class="stl_148">
-<%= @npc.spells.where(level:2)[4].name unless @npc.spells.where(level:2)[4].nil? %> </span></div>
-					<div class="stl_01 stl_161" style="top: 53.6824em; left:3.826em;"><span class="stl_148">
-<%= @npc.spells.where(level:2)[5].name unless @npc.spells.where(level:2)[5].nil? %> </span></div>
-					<div class="stl_01 stl_105" style="top: 54.8464em; left:3.826em;"><span class="stl_148">
-<%= @npc.spells.where(level:2)[6].name unless @npc.spells.where(level:2)[6].nil? %> </span></div>
-					<div class="stl_01 stl_144" style="top: 56.0164em; left:3.826em;"><span class="stl_148">
-<%= @npc.spells.where(level:2)[7].name unless @npc.spells.where(level:2)[7].nil? %> </span></div>
-					<div class="stl_01 stl_40" style="top: 57.1804em; left:3.826em;"><span class="stl_148">
-<%= @npc.spells.where(level:2)[8].name unless @npc.spells.where(level:2)[8].nil? %> </span></div>
-					<div class="stl_01 stl_165" style="top: 58.35em; left:3.826em;"><span class="stl_148">
-<%= @npc.spells.where(level:2)[9].name unless @npc.spells.where(level:2)[9].nil? %> </span></div>
-					<div class="stl_01 stl_151" style="top: 59.5174em; left:3.826em;"><span class="stl_148">
-<%= @npc.spells.where(level:2)[10].name unless @npc.spells.where(level:2)[10].nil? %> </span></div>
-					<div class="stl_01 stl_105" style="top: 60.6829em; left:3.826em;"><span class="stl_148">
-<%= @npc.spells.where(level:2)[11].name unless @npc.spells.where(level:2)[11].nil? %> </span></div>
-					<div class="stl_01 stl_105" style="top: 61.8484em; left:3.826em;"><span class="stl_148">
-<%= @npc.spells.where(level:2)[12].name unless @npc.spells.where(level:2)[12].nil? %> </span></div>
-					<div class="stl_01 stl_162" style="top: 47.7889em; left:34.9067em;"><span class="stl_149">8th-level-5 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 48.9529em; left:34.9067em;"><span class="stl_149">8th-level-6 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 50.1184em; left:34.9067em;"><span class="stl_149">8th-level-7 &nbsp;</span></div>
-					<div class="stl_01" style="top: 50.1348em; left:18.8727em;"><span class="stl_140">5</span></div>
-					<div class="stl_01 stl_166" style="top: 50.1793em; left:20.239em;"><span class="stl_143 stl_11">5-slot<span class="stl_12">s &nbsp;</span></span></div>
-					<div class="stl_01 stl_147" style="top: 52.5049em; left:19.3127em;"><span class="stl_148">5th-level-1 &nbsp;</span></div>
-					<div class="stl_01 stl_164" style="top: 53.6779em; left:19.3127em;"><span class="stl_148">5th-level-2 &nbsp;</span></div>
-					<div class="stl_01 stl_161" style="top: 54.8419em; left:19.3127em;"><span class="stl_148">5th-level-3 &nbsp;</span></div>
-					<div class="stl_01 stl_167" style="top: 56.0059em; left:19.3127em;"><span class="stl_148">5th-level-4 &nbsp;</span></div>
-					<div class="stl_01 stl_165" style="top: 57.1729em; left:19.3127em;"><span class="stl_148">5th-level-5 &nbsp;</span></div>
-					<div class="stl_01 stl_167" style="top: 58.3369em; left:19.3127em;"><span class="stl_148">5th-level-6 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 59.5009em; left:19.3127em;"><span class="stl_148">5th-level-7 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 60.6709em; left:19.3127em;"><span class="stl_148">5th-level-8 &nbsp;</span></div>
-					<div class="stl_01 stl_151" style="top: 61.8484em; left:19.3127em;"><span class="stl_148">5th-level-9 &nbsp;</span></div>
+          <div class="stl_01" style="top: 26.4334em; left:3.1227em;"><span class="stl_140">1</span></div>
+          <div class="stl_01 stl_157" style="top: 26.4763em; left:4.4905em;"><span class="stl_158 stl_11"><%= @split_spells_slots[1] %></span></div>
+          <div class="stl_01 stl_147" style="top: 30.1384em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[0].name unless @npc.spells.where(level:1)[0].nil? %></span></div>
+          <div class="stl_01 stl_105" style="top: 31.3024em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[1].name unless @npc.spells.where(level:1)[1].nil? %></span></div>
+          <div class="stl_01 stl_105" style="top: 32.4664em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[2].name unless @npc.spells.where(level:1)[2].nil? %></span></div>
+          <div class="stl_01 stl_151" style="top: 33.6364em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[3].name unless @npc.spells.where(level:1)[3].nil? %></span></div>
+          <div class="stl_01 stl_151" style="top: 34.8031em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[4].name unless @npc.spells.where(level:1)[4].nil? %></span></div>
+          <div class="stl_01 stl_151" style="top: 35.9704em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[5].name unless @npc.spells.where(level:1)[5].nil? %></span></div>
+          <div class="stl_01 stl_105" style="top: 37.1344em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[6].name unless @npc.spells.where(level:1)[6].nil? %></span></div>
+          <div class="stl_01 stl_151" style="top: 38.3044em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[7].name unless @npc.spells.where(level:1)[7].nil? %></span></div>
+          <div class="stl_01 stl_105" style="top: 39.4684em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[8].name unless @npc.spells.where(level:1)[8].nil? %></span></div>
+          <div class="stl_01 stl_105" style="top: 40.6324em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[9].name unless @npc.spells.where(level:1)[9].nil? %></span></div>
+          <div class="stl_01 stl_151" style="top: 41.8024em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[10].name unless @npc.spells.where(level:1)[10].nil? %></span></div>
+          <div class="stl_01 stl_105" style="top: 42.9664em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:1)[11].name unless @npc.spells.where(level:1)[11].nil? %></span></div>
+          <div class="stl_01" style="top: 45.4808em; left:3.1227em;"><span class="stl_140">2</span></div>
+          <div class="stl_01 stl_157" style="top: 45.5248em; left:4.4905em;"><span class="stl_158 stl_11"><%= @split_spells_slots[2] %></span></div>
+          <div class="stl_01 stl_147" style="top: 47.8504em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:2)[0].name unless @npc.spells.where(level:2)[0].nil? %> </span></div>
+          <div class="stl_01 stl_151" style="top: 49.0234em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:2)[1].name unless @npc.spells.where(level:2)[1].nil? %> </span></div>
+          <div class="stl_01 stl_161" style="top: 50.1874em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:2)[2].name unless @npc.spells.where(level:2)[2].nil? %> </span></div>
+          <div class="stl_01 stl_161" style="top: 51.3514em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:2)[3].name unless @npc.spells.where(level:2)[3].nil? %> </span></div>
+          <div class="stl_01 stl_164" style="top: 52.5184em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:2)[4].name unless @npc.spells.where(level:2)[4].nil? %> </span></div>
+          <div class="stl_01 stl_161" style="top: 53.6824em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:2)[5].name unless @npc.spells.where(level:2)[5].nil? %> </span></div>
+          <div class="stl_01 stl_105" style="top: 54.8464em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:2)[6].name unless @npc.spells.where(level:2)[6].nil? %> </span></div>
+          <div class="stl_01 stl_144" style="top: 56.0164em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:2)[7].name unless @npc.spells.where(level:2)[7].nil? %> </span></div>
+          <div class="stl_01 stl_40" style="top: 57.1804em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:2)[8].name unless @npc.spells.where(level:2)[8].nil? %> </span></div>
+          <div class="stl_01 stl_165" style="top: 58.35em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:2)[9].name unless @npc.spells.where(level:2)[9].nil? %> </span></div>
+          <div class="stl_01 stl_151" style="top: 59.5174em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:2)[10].name unless @npc.spells.where(level:2)[10].nil? %> </span></div>
+          <div class="stl_01 stl_105" style="top: 60.6829em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:2)[11].name unless @npc.spells.where(level:2)[11].nil? %> </span></div>
+          <div class="stl_01 stl_105" style="top: 61.8484em; left:3.826em;"><span class="stl_148"><%= @npc.spells.where(level:2)[12].name unless @npc.spells.where(level:2)[12].nil? %> </span></div>
+          <div class="stl_01" style="top: 12.4557em; left:18.8727em;"><span class="stl_140">3</span></div>
+          <div class="stl_01 stl_142" style="top: 12.4993em; left:20.239em;"><span class="stl_143 stl_11"><%= @split_spells_slots[3] %></span></div>
+          <div class="stl_01 stl_147" style="top: 14.8249em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:3)[0].name unless @npc.spells.where(level:3)[0].nil? %> </span></div>
+					<div class="stl_01 stl_147" style="top: 15.9979em; left:19.5745em;"><span class="stl_148"><%= @npc.spells.where(level:3)[1].name unless @npc.spells.where(level:3)[1].nil? %> </span></div>
+					<div class="stl_01 stl_105" style="top: 17.1619em; left:19.5745em;"><span class="stl_148"><%= @npc.spells.where(level:3)[2].name unless @npc.spells.where(level:3)[2].nil? %> </span></div>
+					<div class="stl_01 stl_150" style="top: 18.3259em; left:19.5745em;"><span class="stl_148"><%= @npc.spells.where(level:3)[3].name unless @npc.spells.where(level:3)[3].nil? %> </span></div>
+					<div class="stl_01 stl_151" style="top: 19.4929em; left:19.5745em;"><span class="stl_148"><%= @npc.spells.where(level:3)[4].name unless @npc.spells.where(level:3)[4].nil? %> </span></div>
+					<div class="stl_01 stl_105" style="top: 20.6569em; left:19.5745em;"><span class="stl_148"><%= @npc.spells.where(level:3)[5].name unless @npc.spells.where(level:3)[5].nil? %> </span></div>
+					<div class="stl_01 stl_150" style="top: 21.8209em; left:19.5745em;"><span class="stl_148"><%= @npc.spells.where(level:3)[6].name unless @npc.spells.where(level:3)[6].nil? %> </span></div>
+					<div class="stl_01 stl_151" style="top: 22.9909em; left:19.5745em;"><span class="stl_148"><%= @npc.spells.where(level:3)[7].name unless @npc.spells.where(level:3)[7].nil? %> </span></div>
+					<div class="stl_01 stl_105" style="top: 24.1549em; left:19.5745em;"><span class="stl_148"><%= @npc.spells.where(level:3)[8].name unless @npc.spells.where(level:3)[8].nil? %> </span></div>
+          <div class="stl_01 stl_155" style="top: 25.3245em; left:19.3127em;"><span class="stl_156 stl_11"><%= @npc.spells.where(level:3)[9].name unless @npc.spells.where(level:3)[9].nil? %> </span></div>
+          <div class="stl_01 stl_147" style="top: 26.4919em; left:19.5745em;"><span class="stl_148"><%= @npc.spells.where(level:3)[10].name unless @npc.spells.where(level:3)[10].nil? %> </span></div>
+          <div class="stl_01 stl_105" style="top: 27.6574em; left:19.5745em;"><span class="stl_148"><%= @npc.spells.where(level:3)[11].name unless @npc.spells.where(level:3)[11].nil? %> </span></div>
+          <div class="stl_01 stl_105" style="top: 28.8229em; left:19.5745em;"><span class="stl_148"><%= @npc.spells.where(level:3)[12].name unless @npc.spells.where(level:3)[12].nil? %> </span></div>
+          <div class="stl_01" style="top: 31.2545em; left:18.8727em;"><span class="stl_140">4</span></div>
+          <div class="stl_01 stl_142" style="top: 31.2973em; left:20.239em;"><span class="stl_143 stl_11"><%= @split_spells_slots[4] %></span></div>
+          <div class="stl_01 stl_147" style="top: 33.6229em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:4)[0].name unless @npc.spells.where(level:4)[0].nil? %> </span></div>
+          <div class="stl_01 stl_151" style="top: 34.7959em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:4)[1].name unless @npc.spells.where(level:4)[1].nil? %> </span></div>
+          <div class="stl_01 stl_105" style="top: 35.9599em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:4)[2].name unless @npc.spells.where(level:4)[2].nil? %> </span></div>
+          <div class="stl_01 stl_105" style="top: 37.1239em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:4)[3].name unless @npc.spells.where(level:4)[3].nil? %> </span></div>
+          <div class="stl_01 stl_151" style="top: 38.2909em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:4)[4].name unless @npc.spells.where(level:4)[4].nil? %> </span></div>
+          <div class="stl_01 stl_105" style="top: 39.4549em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:4)[5].name unless @npc.spells.where(level:4)[5].nil? %> </span></div>
+          <div class="stl_01 stl_105" style="top: 40.6189em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:4)[6].name unless @npc.spells.where(level:4)[6].nil? %> </span></div>
+          <div class="stl_01 stl_151" style="top: 41.7889em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:4)[7].name unless @npc.spells.where(level:4)[7].nil? %> </span></div>
+          <div class="stl_01 stl_105" style="top: 42.9529em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:4)[8].name unless @npc.spells.where(level:4)[8].nil? %> </span></div>
+          <div class="stl_01 stl_160" style="top: 44.1225em; left:19.5745em;"><span class="stl_156"><%= @npc.spells.where(level:4)[9].name unless @npc.spells.where(level:4)[9].nil? %> </span></div>
+          <div class="stl_01 stl_151" style="top: 45.2899em; left:19.5745em;"><span class="stl_148"><%= @npc.spells.where(level:4)[10].name unless @npc.spells.where(level:4)[10].nil? %> </span></div>
+          <div class="stl_01 stl_161" style="top: 46.4554em; left:19.5745em;"><span class="stl_148"><%= @npc.spells.where(level:4)[11].name unless @npc.spells.where(level:4)[11].nil? %> </span></div>
+          <div class="stl_01 stl_105" style="top: 47.6209em; left:19.5745em;"><span class="stl_148"><%= @npc.spells.where(level:4)[12].name unless @npc.spells.where(level:4)[12].nil? %> </span></div>
+          <div class="stl_01" style="top: 50.1348em; left:18.8727em;"><span class="stl_140">5</span></div>
+          <div class="stl_01 stl_166" style="top: 50.1793em; left:20.239em;"><span class="stl_143 stl_11"><%= @split_spells_slots[5] %></span></div>
+          <div class="stl_01 stl_151" style="top: 61.8484em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:5)[0].name unless @npc.spells.where(level:5)[0].nil? %> </span></div>
+          <div class="stl_01 stl_147" style="top: 52.5049em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:5)[1].name unless @npc.spells.where(level:5)[1].nil? %> </span></div>
+          <div class="stl_01 stl_164" style="top: 53.6779em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:5)[2].name unless @npc.spells.where(level:5)[2].nil? %> </span></div>
+          <div class="stl_01 stl_161" style="top: 54.8419em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:5)[3].name unless @npc.spells.where(level:5)[3].nil? %> </span></div>
+          <div class="stl_01 stl_167" style="top: 56.0059em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:5)[4].name unless @npc.spells.where(level:5)[4].nil? %> </span></div>
+          <div class="stl_01 stl_165" style="top: 57.1729em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:5)[5].name unless @npc.spells.where(level:5)[5].nil? %> </span></div>
+          <div class="stl_01 stl_167" style="top: 58.3369em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:5)[6].name unless @npc.spells.where(level:5)[6].nil? %> </span></div>
+          <div class="stl_01 stl_105" style="top: 59.5009em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:5)[7].name unless @npc.spells.where(level:5)[7].nil? %> </span></div>
+          <div class="stl_01 stl_151" style="top: 60.6709em; left:19.3127em;"><span class="stl_148"><%= @npc.spells.where(level:5)[8].name unless @npc.spells.where(level:5)[8].nil? %> </span></div>
+          <div class="stl_01" style="top: 12.4557em; left:34.4664em;"><span class="stl_140">6</span></div>
+          <div class="stl_01 stl_144" style="top: 12.4993em; left:35.833em;"><span class="stl_143 stl_11"><%= @split_spells_slots[6] %></span></div>
+          <div class="stl_01 stl_105" style="top: 24.1564em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:6)[0].name unless @npc.spells.where(level:6)[0].nil? %> </span></div>
+          <div class="stl_01 stl_147" style="top: 14.8249em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:6)[1].name unless @npc.spells.where(level:6)[1].nil? %> </span></div>
+					<div class="stl_01 stl_152" style="top: 15.9904em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:6)[2].name unless @npc.spells.where(level:6)[2].nil? %> </span></div>
+					<div class="stl_01 stl_151" style="top: 17.1619em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:6)[3].name unless @npc.spells.where(level:6)[3].nil? %> </span></div>
+					<div class="stl_01 stl_153" style="top: 18.3259em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:6)[4].name unless @npc.spells.where(level:6)[4].nil? %> </span></div>
+					<div class="stl_01 stl_151" style="top: 19.4929em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:6)[5].name unless @npc.spells.where(level:6)[5].nil? %> </span></div>
+					<div class="stl_01 stl_105" style="top: 20.6569em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:6)[6].name unless @npc.spells.where(level:6)[6].nil? %> </span></div>
+					<div class="stl_01 stl_153" style="top: 21.8224em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:6)[7].name unless @npc.spells.where(level:6)[7].nil? %> </span></div>
+					<div class="stl_01 stl_151" style="top: 22.9909em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:6)[8].name unless @npc.spells.where(level:6)[8].nil? %> </span></div>
+          <div class="stl_01" style="top: 26.6017em; left:34.4664em;"><span class="stl_140">7</span></div>
+          <div class="stl_01 stl_142" style="top: 26.6473em; left:35.833em;"><span class="stl_143 stl_11"><%= @split_spells_slots[7] %></span></div>
+          <div class="stl_01 stl_105" style="top: 38.3044em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:7)[0].name unless @npc.spells.where(level:7)[0].nil? %> </span></div>
+					<div class="stl_01 stl_147" style="top: 28.9729em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:7)[1].name unless @npc.spells.where(level:7)[1].nil? %> </span></div>
+					<div class="stl_01 stl_105" style="top: 30.1384em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:7)[2].name unless @npc.spells.where(level:7)[2].nil? %> </span></div>
+					<div class="stl_01 stl_151" style="top: 31.3099em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:7)[3].name unless @npc.spells.where(level:7)[3].nil? %> </span></div>
+					<div class="stl_01 stl_105" style="top: 32.4739em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:7)[4].name unless @npc.spells.where(level:7)[4].nil? %> </span></div>
+					<div class="stl_01 stl_151" style="top: 33.6409em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:7)[5].name unless @npc.spells.where(level:7)[5].nil? %> </span></div>
+					<div class="stl_01 stl_105" style="top: 34.8049em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:7)[6].name unless @npc.spells.where(level:7)[6].nil? %> </span></div>
+					<div class="stl_01 stl_105" style="top: 35.9704em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:7)[7].name unless @npc.spells.where(level:7)[7].nil? %> </span></div>
+					<div class="stl_01 stl_151" style="top: 37.1389em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:7)[8].name unless @npc.spells.where(level:7)[8].nil? %> </span></div>
+          <div class="stl_01" style="top: 40.7521em; left:34.4664em;"><span class="stl_140">8</span></div>
+					<div class="stl_01 stl_142" style="top: 40.7953em; left:35.833em;"><span class="stl_143 stl_11"><%= @split_spells_slots[8] %></span></div>
+          <div class="stl_01 stl_105" style="top: 50.1184em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:8)[0].name unless @npc.spells.where(level:8)[0].nil? %></span></div>
+					<div class="stl_01 stl_147" style="top: 43.1209em; left:35.1685em;"><span class="stl_149"><%= @npc.spells.where(level:8)[1].name unless @npc.spells.where(level:8)[1].nil? %></span></div>
+					<div class="stl_01 stl_162" style="top: 44.2864em; left:35.1685em;"><span class="stl_149"><%= @npc.spells.where(level:8)[2].name unless @npc.spells.where(level:8)[2].nil? %></span></div>
+					<div class="stl_01 stl_163" style="top: 45.4579em; left:35.1685em;"><span class="stl_149"><%= @npc.spells.where(level:8)[3].name unless @npc.spells.where(level:8)[3].nil? %></span></div>
+					<div class="stl_01 stl_56" style="top: 46.6219em; left:35.1685em;"><span class="stl_149"><%= @npc.spells.where(level:8)[4].name unless @npc.spells.where(level:8)[4].nil? %></span></div>
+					<div class="stl_01 stl_162" style="top: 47.7889em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:8)[5].name unless @npc.spells.where(level:8)[5].nil? %></span></div>
+					<div class="stl_01 stl_105" style="top: 48.9529em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:8)[6].name unless @npc.spells.where(level:8)[6].nil? %></span></div>
 					<div class="stl_01" style="top: 52.4791em; left:34.4664em;"><span class="stl_140">9</span></div>
-					<div class="stl_01 stl_142" style="top: 52.5253em; left:35.833em;"><span class="stl_143 stl_11">9-slot<span class="stl_12">s &nbsp;</span></span></div>
-					<div class="stl_01 stl_147" style="top: 54.8509em; left:34.9067em;"><span class="stl_149">9th-level-1 &nbsp;</span></div>
-					<div class="stl_01 stl_40" style="top: 56.0164em; left:34.9067em;"><span class="stl_149">9th-level-2 &nbsp;</span></div>
-					<div class="stl_01" style="top: 57.1879em; left:34.9067em;"><span class="stl_149">9th-level-3 &nbsp;</span></div>
-					<div class="stl_01 stl_105" style="top: 58.3519em; left:34.9067em;"><span class="stl_149">9th-level-4 &nbsp;</span></div>
-					<div class="stl_01 stl_144" style="top: 59.5189em; left:34.9067em;"><span class="stl_149">9th-level-5 &nbsp;</span></div>
-					<div class="stl_01 stl_40" style="top: 60.6829em; left:34.9067em;"><span class="stl_149">9th-level-6 &nbsp;</span></div>
-					<div class="stl_01" style="top: 61.8484em; left:34.9067em;"><span class="stl_149">9th-level-7 &nbsp;</span></div>
+					<div class="stl_01 stl_142" style="top: 52.5253em; left:35.833em;"><span class="stl_143 stl_11"><%= @split_spells_slots[9] %></span></div>
+          <div class="stl_01" style="top: 61.8484em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:9)[0].name unless @npc.spells.where(level:9)[0].nil? %></span></div>
+					<div class="stl_01 stl_147" style="top: 54.8509em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:9)[1].name unless @npc.spells.where(level:9)[1].nil? %></span></div>
+					<div class="stl_01 stl_40" style="top: 56.0164em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:9)[2].name unless @npc.spells.where(level:9)[2].nil? %></span></div>
+					<div class="stl_01" style="top: 57.1879em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:9)[3].name unless @npc.spells.where(level:9)[3].nil? %></span></div>
+					<div class="stl_01 stl_105" style="top: 58.3519em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:9)[4].name unless @npc.spells.where(level:9)[4].nil? %></span></div>
+					<div class="stl_01 stl_144" style="top: 59.5189em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:9)[5].name unless @npc.spells.where(level:9)[5].nil? %></span></div>
+					<div class="stl_01 stl_40" style="top: 60.6829em; left:34.9067em;"><span class="stl_149"><%= @npc.spells.where(level:9)[6].name unless @npc.spells.where(level:9)[6].nil? %></span></div>
 					<div class="stl_01" style="top: 64.5544em; left:14.543em;"><span class="stl_168" style="word-spacing:-0.09em;">TM &amp; © 2014 Wizards of the Coast LLC. Permission is granted to photocopy this document for personal use. &nbsp;</span></div>
 				</div>
 			</div>
