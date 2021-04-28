@@ -13,8 +13,10 @@
   <% else %>
     <%= button_to 'Login and Save', '/auth/google_oauth2', class: "button-text-area"  %>
   <% end %>
-  <h2>View as PDF:</h2>
-  <%= button_to 'PDF', npc_pdf_path(::NpcModel.find(@npc.id), format: :pdf), class: "button-text-area" %>
+
+  <!-- <h2>View as PDF:</h2>
+  <%= button_to 'PDF', npc_pdf_path(::NpcModel.find(@npc.id), format: :pdf), class: "button-text-area" %> -->
+
   <%= render "shared/npc_show" %>
   <h2>Roll Up another NPC:</h2>
     <%= render "shared/roll_npc" %>
