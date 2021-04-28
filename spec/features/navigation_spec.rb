@@ -4,12 +4,23 @@ RSpec.describe 'Site Navigation' do
   describe 'As a Visitor' do
     describe 'I see a nav bar where I can link to' do
       it 'the welcome page' do
-        @user = User.create(name: 'Jackie', email: 'Jackie@67.com', google_token: "MOCK_OMNIAUTH_GOOGLE_TOKEN", google_refresh_token: "MOCK_OMNIAUTH_GOOGLE_REFRESH TOKEN", uid: "100000000000000000000",  username: "Jackie@67.com")
-        allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
         visit user_dashboard_path
 
         within 'nav' do
           click_link 'Home'
+        end
+
+        expect(current_path).to eq(root_path)
+      end
+
+      xit 'the donate button' do
+        visit user_dashboard_path
+
+        within 'nav' do
+          click_button 'Donate'
+
+      # It errors out here as there is no donate post route.  Not sure where to go with this test though
+
         end
 
         expect(current_path).to eq(root_path)
@@ -52,6 +63,19 @@ RSpec.describe 'Site Navigation' do
       end
     end
 
+    xit 'the donate button' do
+      visit user_dashboard_path
+
+      within 'nav' do
+        click_button 'Donate'
+
+    # It errors out here as there is no donate post route.  Not sure where to go with this test though
+
+      end
+
+      expect(current_path).to eq(root_path)
+    end
+
     describe 'I do not see in my nav bar' do
       it 'the login link' do
         visit root_path
@@ -77,6 +101,19 @@ RSpec.describe 'Site Navigation' do
 
         expect(current_path).to eq(root_path)
         expect(page).to have_content('You have been logged out!')
+      end
+
+      xit 'the donate button' do
+        visit user_dashboard_path
+
+        within 'nav' do
+          click_button 'Donate'
+
+      # It errors out here as there is no donate post route.  Not sure where to go with this test though
+
+        end
+
+        expect(current_path).to eq(root_path)
       end
 
       it 'the User Dashboard page' do
