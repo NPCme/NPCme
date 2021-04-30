@@ -55,6 +55,7 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'autoprefixer-rails'
 gem 'sprockets'
+gem 'libv8-node', '~> 15.14.0.1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
